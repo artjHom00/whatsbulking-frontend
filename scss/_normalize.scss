@@ -1,0 +1,51 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.2;
+  font-family: Lato;
+  background-color: $cWhite;
+  color: $cText;
+}
+
+a {
+  text-decoration: none;
+  color: $cText;
+}
+
+button,
+input,
+textarea {
+  background: transparent;
+  outline: none;
+  border: 0;
+  font-family: Lato;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style: none;
+}
+
+.opacity {
+  opacity: 0.75;
+}
+
+

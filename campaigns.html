@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campaigns</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header__inner">
+        <div class="header__logo">
+          <a href="#">
+            <span class="subheading logo">WhatsBulking</span>
+          </a>
+        </div>
+        <div class="header__icons">
+          <a href="#">
+            <img src="./img/icons/header/faq.svg" alt="faq">
+          </a>
+          <button id="burger">
+            <img src="./img/icons/header/menu.svg" alt="menu">
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container page-container">
+    <aside id="aside">
+      <h5 class="h5 aside__title">Dashboard</h5>
+      <nav class="aside__menu">
+        <ul>
+          <li class="aside__menu-item">
+            <a href="/dashboard.html" aria-label="Home">
+              <img src="./img/icons/menu/home.svg" alt="home"><span>Home</span>
+            </a>
+          </li>
+          <li class="aside__menu-item active load">
+            <a href="/campaigns.html" aria-label="Campaigns">
+              <img src="./img/icons/menu/campaigns.svg" alt="campaigns"><span>Campaigns</span>
+            </a>
+          </li>
+          <li class="aside__menu-item">
+            <a href="/support.html" aria-label="Support">
+              <img src="./img/icons/menu/support.svg" alt="support"><span>Support</span>
+            </a>
+          </li>
+          <li class="aside__menu-item">
+            <a href="/subscription.html" aria-label="Subscription">
+              <img src="./img/icons/menu/subscription.svg" alt="subscription"><span>Subscription</span>
+            </a>
+          </li>
+          <li class="aside__menu-item">
+            <a href="/earn-with-us.html" aria-label="Earn with us">
+              <img src="./img/icons/menu/earn-with-us.svg" alt="earn-with-us"><span>Earn with us</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main>
+      <div class="subscription-warning campaigns__warning">
+        <img src="./img/icons/error.svg" alt="error">
+        <div class="subscription-warning__info">
+          <h4 class="h4 subscription-warning__title">Your Subscription Expires Soon</h4>
+          <p class="opacity">Make sure to make the payment before the subscription expires</p>
+        </div>
+      </div>
+
+      <section>
+        <div class="headline">
+          <h3 class="h3 title">Your Campaigns</h3>
+          <p class="opacity small">Track & Control your started campaigns</p>
+        </div>
+        <div class="accordeon campaigns__accordeon active">
+          <div class="accordeon__title">
+            <h4 class="h4">Active / In Queue</h4>
+            <button class="active"><img src="./img/icons/arrow-expand.svg" alt="arrow"></button>
+          </div>
+          <div class="accordeon__content">
+            <div class="campaigns__cards">  
+              <div class="campaigns__card active loading">
+                <div class="campaigns__card-info">
+                  <div>
+                    <img src="./img/icons/campaigns/status/load.svg" alt="load">
+                  </div>
+                  <div>
+                    <span class="smaller opacity">13 Feb 2024</span>
+                    <p class="button-text campaigns__card-title">Example Campaign</p>
+                  </div>
+                  <div class="campaigns__card-data">
+                    <div class="opacity"><img src="./img/icons/campaigns/info/error.svg" alt="error">1 173</div>
+                    <div class="opacity"><img src="./img/icons/campaigns/info/approval.svg" alt="approval">5 327</div>
+                    <div><img src="./img/icons/campaigns/info/sms.svg" alt="sms">6 480 / 20 000</div>
+                  </div>
+                </div>
+                <div class="campaigns__card-actions">
+                  <button><img src="./img/icons/campaigns/actions/close.svg" alt="close"></button>
+                  <button><img src="./img/icons/campaigns/actions/pause.svg" alt="pause"></button>
+                  <button><img src="./img/icons/campaigns/actions/download.svg" alt="downlaod"></button>
+                </div>
+              </div>
+              <div class="campaigns__card active">
+                <div class="campaigns__card-info">
+                  <div>
+                    <img src="./img/icons/campaigns/status/clock.svg" alt="clock">
+                  </div>
+                  <div>
+                    <span class="smaller opacity">In queue</span>
+                    <p class="button-text campaigns__card-title">Example Campaign</p>
+                  </div>
+                  <div class="campaigns__card-data">
+                    <div class="opacity"><img src="./img/icons/campaigns/info/error.svg" alt="error">1 173</div>
+                    <div class="opacity"><img src="./img/icons/campaigns/info/approval.svg" alt="approval">5 327</div>
+                    <div><img src="./img/icons/campaigns/info/sms.svg" alt="sms">6 480 / 20 000</div>
+                  </div>
+                </div>
+                <div class="campaigns__card-actions">
+                  <button><img src="./img/icons/campaigns/actions/close.svg" alt="close"></button>
+                  <button><img src="./img/icons/campaigns/actions/pause.svg" alt="pause"></button>
+                  <button><img src="./img/icons/campaigns/actions/download.svg" alt="downlaod"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordeon campaigns__accordeon active">
+          <div class="accordeon__title">
+            <h4 class="h4">Finished Campaigns</h4>
+            <button class="active"><img src="./img/icons/arrow-expand.svg" alt="arrow"></button>
+          </div>
+          <div class="accordeon__content">
+            <div class="campaigns__cards">
+              <div class="campaigns__card">
+                <div class="campaigns__card-info">
+                  <div>
+                    <img src="./img/icons/campaigns/status/cross.svg" alt="cross">
+                  </div>
+                  <div>
+                    <span class="smaller opacity">15 Nov 2023</span>
+                    <p class="button-text campaigns__card-title">Example Campaign</p>
+                  </div>
+                  <div class="campaigns__card-data">
+                    <div class="opacity"><img src="./img/icons/campaigns/info/error.svg" alt="error">1 173</div>
+                    <div class="opacity"><img src="./img/icons/campaigns/info/approval.svg" alt="approval">5 327</div>
+                    <div><img src="./img/icons/campaigns/info/sms.svg" alt="sms">20 000 / 20 000</div>
+                  </div>
+                </div>
+                <div class="campaigns__card-actions">
+                  <button><img src="./img/icons/campaigns/actions/download.svg" alt="downlaod"></button>
+                </div>
+              </div>
+              <div class="campaigns__card">
+                <div class="campaigns__card-info">
+                  <div>
+                    <img src="./img/icons/campaigns/status/cross.svg" alt="cross">
+                  </div>
+                  <div>
+                    <span class="smaller opacity">15 Nov 2023</span>
+                    <p class="button-text campaigns__card-title">Example Campaign</p>
+                  </div>
+                  <div class="campaigns__card-data">
+                    <div class="opacity"><img src="./img/icons/campaigns/info/error.svg" alt="error">1 173</div>
+                    <div class="opacity"><img src="./img/icons/campaigns/info/approval.svg" alt="approval">5 327</div>
+                    <div><img src="./img/icons/campaigns/info/sms.svg" alt="sms">20 000 / 20 000</div>
+                  </div>
+                </div>
+                <div class="campaigns__card-actions">
+                  <button><img src="./img/icons/campaigns/actions/download.svg" alt="downlaod"></button>
+                </div>
+              </div>
+              <div class="campaigns__card">
+                <div class="campaigns__card-info">
+                  <div>
+                    <img src="./img/icons/campaigns/status/cross.svg" alt="cross">
+                  </div>
+                  <div>
+                    <span class="smaller opacity">15 Nov 2023</span>
+                    <p class="button-text campaigns__card-title">Example Campaign</p>
+                  </div>
+                  <div class="campaigns__card-data">
+                    <div class="opacity"><img src="./img/icons/campaigns/info/error.svg" alt="error">1 173</div>
+                    <div class="opacity"><img src="./img/icons/campaigns/info/approval.svg" alt="approval">5 327</div>
+                    <div><img src="./img/icons/campaigns/info/sms.svg" alt="sms">20 000 / 20 000</div>
+                  </div>
+                </div>
+                <div class="campaigns__card-actions">
+                  <button><img src="./img/icons/campaigns/actions/download.svg" alt="downlaod"></button>
+                </div>
+              </div>
+              <div class="campaigns__card">
+                <div class="campaigns__card-info">
+                  <div>
+                    <img src="./img/icons/campaigns/status/tick.svg" alt="tick">
+                  </div>
+                  <div>
+                    <span class="smaller opacity">15 Nov 2023</span>
+                    <p class="button-text campaigns__card-title">Example Campaign</p>
+                  </div>
+                  <div class="campaigns__card-data">
+                    <div class="opacity"><img src="./img/icons/campaigns/info/error.svg" alt="error">1 173</div>
+                    <div class="opacity"><img src="./img/icons/campaigns/info/approval.svg" alt="approval">5 327</div>
+                    <div><img src="./img/icons/campaigns/info/sms.svg" alt="sms">20 000 / 20 000</div>
+                  </div>
+                </div>
+                <div class="campaigns__card-actions">
+                  <button><img src="./img/icons/campaigns/actions/download.svg" alt="downlaod"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer__inner">
+        <a href="#">
+          <span class="subheading logo">WhatsBulking</span>
+        </a>
+        <div class="footer__nav">
+          <ul>
+            <li class="smaller opacity"><a href="#">TERMS & CONDITIONS</a></li>
+            <li class="smaller opacity"><a href="#">Privacy Policy</a></li>
+            <li class="smaller opacity"><a href="#">COOKIES POLICY</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="./js/script.js"></script>
+</body>
+</html>

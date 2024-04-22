@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WhatsApp Service</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header__inner">
+        <div class="header__logo">
+          <a href="#">
+            <span class="subheading logo">WhatsBulking</span>
+          </a>
+        </div>
+        <div class="header__icons">
+          <a href="#">
+            <img src="./img/icons/header/faq.svg" alt="faq">
+          </a>
+          <button id="burger">
+            <img src="./img/icons/header/menu.svg" alt="menu">
+          </bu>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container page-container">
+    <aside id="aside">
+      <h5 class="h5 aside__title">Dashboard</h5>
+      <nav class="aside__menu">
+        <ul>
+          <li class="aside__menu-item active">
+            <a href="/dashboard.html" aria-label="Home">
+              <img src="./img/icons/menu/home.svg" alt="home"><span>Home</span>
+            </a>
+          </li>
+          <li class="aside__menu-item load">
+            <a href="/campaigns.html" aria-label="Campaigns">
+              <img src="./img/icons/menu/campaigns.svg" alt="campaigns"><span>Campaigns</span>
+            </a>
+          </li>
+          <li class="aside__menu-item">
+            <a href="/support.html" aria-label="Support">
+              <img src="./img/icons/menu/support.svg" alt="support"><span>Support</span>
+            </a>
+          </li>
+          <li class="aside__menu-item">
+            <a href="/subscription.html" aria-label="Subscription">
+              <img src="./img/icons/menu/subscription.svg" alt="subscription"><span>Subscription</span>
+            </a>
+          </li>
+          <li class="aside__menu-item">
+            <a href="/earn-with-us.html" aria-label="Earn with us">
+              <img src="./img/icons/menu/earn-with-us.svg" alt="earn-with-us"><span>Earn with us</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main>
+      <section class="start">
+        <form action="post">
+          <div class="headline">
+            <h3 class="h3" class="title">Hi, SMMA Agency</h3>
+            <p class="opacity small">Create a Sending Campaign From Here</p>
+          </div>
+          <div class="start__info info">
+            <div>
+              <img src="./img/icons/info/email.svg" alt="email">
+              <p class="opacity">Available Messages: 3 381</p>
+            </div>
+            <div>
+              <img src="./img/icons/info/future.svg" alt="future">
+              <p class="opacity">Expires In: 18 days</p>
+            </div>
+          </div>
+          <div>
+            <h4 class="h4 start__heading">Upload a list of numbers</h4>
+            <div class="start__upload">
+              <input type="file" id="file-upload" style="display: none;" name="file-upload" class="input">
+              <label for="file-upload" tabindex="1">
+                <div>
+                  <img src="./img/icons/file-upload.svg" alt="upload file">
+                </div>
+                <p class="small opacity">Accepted Formats: XLSX, CSV, TXT</p>
+              </label>
+            </div>
+          </div>
+          <h4 class="h4 start__heading">Message templates</h4>
+          <div class="start__messages">
+            <div id="templates">
+              <textarea id="template" name="template" class="textarea">Hello, %username%, we have a unique offer for you!</textarea>
+              <textarea name="template" class="textarea">Hello, %username%, we have a unique offer for you!</textarea>
+            </div>
+            <button type="button" id="add-template" class="button-text button">+</button>
+          </div>
+          <div class="start__dynamic">
+            <span class="opacity">Use Dynamic Data:</span>
+            <div class="start__dynamic-btns">
+              <button tabindex="2" type="button" class="active button">User’s Name</button>
+              <button tabindex="3" type="button" class="button">Phone Number</button>
+              <button tabindex="4" type="button" class="button">Today’s Date</button>
+            </div>
+            <div class="start__dynamic-checkbox">
+              <input tabindex="5" type="checkbox" id="use-ai" name="use-ai" class="input"> 
+              <label for="use-ai" class="small">ChatGPT Rewriting</label>
+            </div>
+          </div>
+          <button type="submit" tabindex="6" class="button button-primary start__submit button-text">Start</button>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer__inner">
+        <a href="#">
+          <span class="subheading logo">WhatsBulking</span>
+        </a>
+        <div class="footer__nav">
+          <ul>
+            <li class="smaller opacity"><a href="#">TERMS & CONDITIONS</a></li>
+            <li class="smaller opacity"><a href="#">Privacy Policy</a></li>
+            <li class="smaller opacity"><a href="#">COOKIES POLICY</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/script.js"></script>
+</body>
+</html>

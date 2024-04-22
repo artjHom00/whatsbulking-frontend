@@ -1,0 +1,385 @@
+.input, .textarea {
+  border: 2px solid $cLightGray;
+  padding: 16px 20px;
+  color: $cText;
+  font-weight: 500;
+  border-radius: 7px;
+
+  &:focus {
+    border-color: $cPrimary;
+  }
+}
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  border-radius: 7px;
+  font-weight: 500;
+  border: 2px solid $cLightGray;
+  cursor: pointer;
+  background-color: $cLightGray;
+  transition: background-color linear .2s, border-color linear .2s;
+
+  &:hover, &:focus {
+    background-color: darken($cLightGray, 5%);
+  }
+  
+  &.button-primary {
+    border-color: $cPrimary;
+    color: $cWhite;
+    background-color: $cPrimary;
+  
+    &:hover, &:focus {
+      background-color: darken($cPrimary, 10%);
+      border-color: darken($cPrimary, 10%);
+    }
+  }
+
+  &.button-outline {
+    border: 2px solid;
+    border-image-slice: 1;
+    border-width: 2px;  
+    border-image-source: linear-gradient(90deg, #2853EA 0%, #245BC5 100%);
+  }
+}
+
+
+.subscription-warning {
+  width: 100%;
+  border-radius: 7px;
+  background-color: $cLightGray;
+  padding: 16px 48px;
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  &__info {
+    max-width: 350px;
+  }
+
+  &__title {
+    font-weight: 900;
+  }
+
+  @media(max-width: 1024px) {
+      padding: 16px 24px 28px;
+  }
+
+  @media(max-width: 425px) {
+    flex-direction: column;
+
+    >img {
+      align-self: flex-start;
+    }
+  }
+}
+
+/* Accordeon */
+.accordeon {
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    
+    font-weight: 900;
+    cursor: pointer;
+
+    margin-bottom: 28px;
+
+    button {
+      transform: rotate(180deg)
+    }
+  }
+
+  &.active .accordeon__title button {
+    transform: rotate(0);
+  }
+
+  .accordeon__content {
+    display: none;
+  }
+
+  &.active {
+    .accordeon__content {
+      display: block;
+    }
+  }
+}
+
+/* Headline */
+.headline {
+  margin-bottom: 40px;
+  max-width: 300px;
+
+  .title {
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  >div {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+}
+
+/* Plan */
+.plan {
+  padding: 72px 48px;
+  border-radius: 15px;
+  border: 1px solid $cLightGray;
+  box-shadow: 0px 4px 30px 0px #0000001A;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  
+  @media(max-width: 1024px) {
+    padding: 24px;
+  }
+
+  &.free {
+    background: linear-gradient(91.36deg, #2853EA 0%, #245BC5 100%);
+
+    color: $cWhite;
+    position: relative;
+
+    .plan__inner {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      z-index: 2;
+    }
+
+    .plan__background {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      z-index: 1;
+      opacity: 0.4;
+    }
+
+
+    .plan__btn {
+      border: 2px solid $cWhite;
+      background: transparent;
+    }
+
+    ul li {
+      &::before {
+        background-image: url(../img/icons/plan/yes-white.svg);
+      }
+
+      &.no::before {
+        background-image: url(../img/icons/plan/no-white.svg);
+      }
+    }
+
+  }
+  
+  &.has-chrs {
+    padding: 39px 48px 72px;
+
+    .plan__chrs {
+      margin-bottom: 0;
+    }
+
+    .plan__type {
+      margin-bottom: 0;
+    }
+
+    @media(max-width: 1024px) {
+      padding: 39px 24px 24px;
+    }
+  }
+
+  &__type {
+    margin-bottom: 19px;
+  }
+
+  &__price {
+    margin-bottom: 20px;
+  }
+
+  &__per {
+    margin-bottom: 16px;
+  }
+
+  &__message {
+    margin-bottom: 16px;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 40px;
+
+    li {
+      padding-left: 36px;
+      position: relative;
+
+      &::before {
+        content: '';
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 14px;
+        height: 14px;
+
+        background-image: url(../img/icons/plan/yes.svg);
+        background-repeat: no-repeat;
+      }
+
+      &.no::before {
+        background-image: url(../img/icons/plan/no.svg);
+      }
+    }
+  }
+  
+
+  &__btn {
+    padding: 20px 0;
+    width: 100%;
+    align-self: flex-start;
+    font-weight: 800; 
+  }
+}
+
+/* Income Card */
+.income {
+  padding: 40px;
+  background-color: $cLightGray;
+  border-radius: 7px;
+
+  max-width: 500px;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  @media(max-width: 768px) {
+    padding: 24px;      
+  }
+
+  &__amount {
+    font-weight: 800;
+
+    &.h2 { 
+      @media(max-width: 768px) {
+        font-size: 48px;    
+      }
+
+      @media(max-width: 425px) {
+        font-size: 32px;
+      }
+    }
+  }
+
+  &__desc {
+    max-width: 400px;
+  }
+}
+
+// People block
+.people-block {
+  display: flex;
+  margin-right: -32px;
+
+  img {
+    position: relative;
+  
+    &:nth-child(2) {
+      left: -16px;
+    }
+
+    &:nth-child(3) {
+      left: -32px;
+    }
+  }
+}
+
+/* Burger */
+.burger {
+  display: none;
+  width: 32px;
+  height: 24px;
+  position: relative;
+
+  span {
+    width: 32px;
+    height: 4px;
+    background-color: $cText;
+    border-radius: 7px;
+
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    transition: width .2s linear;
+
+    &::before, &::after {
+      content: '';
+
+      position: absolute;
+      left: 0;
+
+      width: 32px;
+      height: 4px;
+      background-color: $cText;
+
+      border-radius: 7px;
+
+      transition: transform .2s linear;
+    }
+
+    &::before {
+      bottom: calc(100% + 6px);
+    }
+
+    &::after {
+      top: calc(100% + 6px);
+    }
+  }
+
+  &.active {
+    span {
+      width: 0;
+
+      &::before {
+        bottom: 0;
+        transform: rotate(-45deg);
+      }
+      
+      &::after {
+        top: 0;
+        transform: rotate(45deg);
+      }
+
+    }
+  }
+
+
+  @media(max-width: 1024px) {
+    display: block;
+  }
+}
