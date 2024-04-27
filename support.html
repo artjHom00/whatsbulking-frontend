@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support</title>
+
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header__inner">
+        <div class="header__logo">
+          <a href="#">
+            <span class="subheading logo">WhatsBulking</span>
+          </a>
+        </div>
+        <div class="header__icons">
+          <a href="#">
+            <object id="svg1" data="./img/icons/header/faq.svg" type="image/svg+xml"></object>
+          </a>
+          <button id="burger">
+            <object data="./img/icons/header/menu.svg" type="image/svg+xml"></object>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container page-container">
+    <aside id="aside">
+      <h5 class="h5 aside__title">Dashboard</h5>
+      <nav class="aside__menu">
+        <ul>
+          <li class="aside__menu-item">
+            <a href="./dashboard.html" aria-label="Home">
+              <object data="./img/icons/menu/home.svg" type="image/svg+xml"></object>
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="aside__menu-item load">
+            <a href="./campaigns.html" aria-label="Campaigns">
+              <object data="./img/icons/menu/campaigns.svg" type="image/svg+xml"></object>
+              <span>Campaigns</span>
+            </a>
+          </li>
+          <li class="aside__menu-item active">
+            <a href="./support.html" aria-label="Support">
+              <object data="./img/icons/menu/support.svg" type="image/svg+xml"></object>
+
+              <span>Support</span>
+            </a>
+          </li>
+          <li class="aside__menu-item">
+            <a href="./subscription.html" aria-label="Subscription">
+              <object data="./img/icons/menu/subscription.svg" type="image/svg+xml"></object>
+              <span>Subscription</span>
+            </a>
+          </li>
+          <li class="aside__menu-item">
+            <a href="./earn-with-us.html" aria-label="Earn with us">
+              <object data="./img/icons/menu/earn-with-us.svg" type="image/svg+xml"></object>
+              <span>Earn with us</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main>
+      <section>
+        <form action="post" class="support__form">
+          <div class="headline">
+            <h3 class="title h3">Support</h3>
+            <p class="small opacity">Contact with us in case of any questions. <br> We live 24/7</p>
+          </div>
+          <div class="support__contacts">
+            <a href="#">
+              <object data="./img/icons/telegram.svg" type="image/svg+xml"></object>
+            </a>
+            <a href="#">
+              <object data="./img/icons/whatsapp.svg" type="image/svg+xml"></object>
+            </a>
+          </div>
+          <div class="support__post">
+            <input class="input" tabindex="1" type="text" placeholder="Subject">
+            <textarea class="textarea" tabindex="2" placeholder="Ask your quetion here"></textarea>
+            <button type="submit" class="button-primary button button-text" tabindex="3">Send</button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer__inner">
+        <a href="#">
+          <span class="subheading logo">WhatsBulking</span>
+        </a>
+        <div class="footer__nav">
+          <ul>
+            <li class="smaller opacity"><a href="#">TERMS & CONDITIONS</a></li>
+            <li class="smaller opacity"><a href="#">Privacy Policy</a></li>
+            <li class="smaller opacity"><a href="#">COOKIES POLICY</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="./js/script.js"></script>
+</body>
+</html>

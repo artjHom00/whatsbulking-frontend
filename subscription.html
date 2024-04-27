@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subscription</title>
+
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header__inner">
+        <div class="header__logo">
+          <a href="#">
+            <span class="subheading logo">WhatsBulking</span>
+          </a>
+        </div>
+        <div class="header__icons">
+          <a href="#">
+            <object id="svg1" data="./img/icons/header/faq.svg" type="image/svg+xml"></object>
+          </a>
+          <button id="burger">
+            <object data="./img/icons/header/menu.svg" type="image/svg+xml"></object>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container page-container">
+    <aside id="aside">
+      <h5 class="h5 aside__title">Dashboard</h5>
+      <nav class="aside__menu">
+        <ul>
+          <li class="aside__menu-item">
+            <a href="./dashboard.html" aria-label="Home">
+              <object data="./img/icons/menu/home.svg" type="image/svg+xml"></object>
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="aside__menu-item load">
+            <a href="./campaigns.html" aria-label="Campaigns">
+              <object data="./img/icons/menu/campaigns.svg" type="image/svg+xml"></object>
+              <span>Campaigns</span>
+            </a>
+          </li>
+          <li class="aside__menu-item">
+            <a href="./support.html" aria-label="Support">
+              <object data="./img/icons/menu/support.svg" type="image/svg+xml"></object>
+
+              <span>Support</span>
+            </a>
+          </li>
+          <li class="aside__menu-item active">
+            <a href="./subscription.html" aria-label="Subscription">
+              <object data="./img/icons/menu/subscription.svg" type="image/svg+xml"></object>
+              <span>Subscription</span>
+            </a>
+          </li>
+          <li class="aside__menu-item">
+            <a href="./earn-with-us.html" aria-label="Earn with us">
+              <object data="./img/icons/menu/earn-with-us.svg" type="image/svg+xml"></object>
+              <span>Earn with us</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main>
+      <section>
+        <div class="headline subscription__headline">
+          <h3 class="h3 title">Subscription</h3>
+          <p class="opacity small">Access all the subscription information here</p>
+        </div>
+        <div class="subscription-warning subscription__warning">
+          <object data="./img/icons/error.svg" type="image/svg+xml"></object>
+          <div class="subscription-warning__info">
+            <h4 class="h4 subscription-warning__title">Your Subscription Expires Soon</h4>
+            <p class="opacity">Make sure to make the payment before the subscription expires</p>
+          </div>
+        </div>
+        <div class="info subscription__info">
+          <div>
+            <object data="./img/icons/info/warning.svg" type="image/svg+xml"></object>
+            <p class="opacity">Current Subscription: Premium</p>
+          </div>
+          <div>
+            <object data="./img/icons/info/email.svg" type="image/svg+xml"></object>
+            <p class="opacity">Available Messages: 3 381</p>
+          </div>
+          <div>
+            <object data="./img/icons/info/future.svg" type="image/svg+xml"></object>
+            <p class="opacity">Expires On: 15/04/2024</p>
+          </div>
+        </div>
+        <div class="subscription__plans">
+          <div class="plan">
+            <h3 class="h3 plan__type">Start</h3>
+            <h2 class="h2 plan__price">$199</h2>
+            <span class="opacity plan__per">Per Month</span>
+            <span class="opacity plan__message">$0.149 per message</span>
+            <ul>
+              <li>1000 messages per month</li>
+              <li>Affiliate program</li>
+              <li>Personal dashboard on a dedicated domain</li>
+              <li class="no">Your personal manager, 24/7</li>
+            </ul>
+            <a href="#" class="button-text button button-primary plan__btn">Make a Payment</a>
+          </div>
+          <div class="plan">
+            <h3 class="h3 plan__type">Premium</h3>
+            <h2 class="h2 plan__price">$299</h2>
+            <span class="opacity plan__per">Per Month</span>
+            <span class="opacity plan__message">$0.149 per message</span>
+            <ul>
+              <li>1000 messages per month</li>
+              <li>Affiliate program</li>
+              <li>Personal dashboard on a dedicated domain</li>
+              <li>Your personal manager, 24/7</li>
+            </ul>
+            <a href="#" class="button-text button button-primary plan__btn">Make a Payment</a>
+          </div>
+          <div class="plan">
+            <h3 class="h3 plan__type">Ultimate</h3>
+            <h2 class="h2 plan__price">$499</h2>
+            <span class="opacity plan__per">Per Month</span>
+            <span class="opacity plan__message">$0.09 per message</span>
+            <ul>
+              <li>1000 messages per month</li>
+              <li>Affiliate program</li>
+              <li>Personal dashboard on a dedicated domain</li>
+              <li>Your personal manager, 24/7</li>
+            </ul>
+            <a href="#" class="button-text button button-primary plan__btn">Make a Payment</a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer__inner">
+        <a href="#">
+          <span class="subheading logo">WhatsBulking</span>
+        </a>
+        <div class="footer__nav">
+          <ul>
+            <li class="smaller opacity"><a href="#">TERMS & CONDITIONS</a></li>
+            <li class="smaller opacity"><a href="#">Privacy Policy</a></li>
+            <li class="smaller opacity"><a href="#">COOKIES POLICY</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/script.js"></script>
+</body>
+</html>
