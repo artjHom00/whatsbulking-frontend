@@ -111,7 +111,7 @@ ul {
 }
 
 .h3 {
-  font-size: 24px;
+  font-size: 32px;
 }
 
 .h4 {
@@ -161,7 +161,7 @@ ul {
   border: 2px solid;
   border-image-slice: 1;
   border-width: 2px;
-  border-image-source: linear-gradient(90deg, #2853EA 0%, #245BC5 100%);
+  border-color: #245BC5;
 }
 
 .subscription-warning {
@@ -265,10 +265,10 @@ ul {
 }
 .plan.free .plan__background {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 30%;
+  left: 75%;
   transform: translate(-50%, -50%);
-  width: 100%;
+  width: 35%;
   z-index: 1;
   opacity: 0.4;
 }
@@ -434,6 +434,14 @@ ul {
   .burger {
     display: block;
   }
+}
+
+img {
+  image-rendering: optimizeSpeed;
+  image-rendering: -o-crisp-edges;
+  image-rendering: pixelated;
+  image-rendering: optimize-contrast;
+  -ms-interpolation-mode: nearest-neighbor;
 }
 
 .container {

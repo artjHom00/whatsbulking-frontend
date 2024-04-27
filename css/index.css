@@ -38,6 +38,7 @@ body {
   font-family: Lato;
   background-color: #FFFFFF;
   color: #1E1E1E;
+  overflow-x: hidden;
 }
 
 a {
@@ -75,15 +76,19 @@ ul {
 }
 
 .subheading {
-  font-size: 24px;
+  font-size: 18px;
 }
 
 .subheading-20 {
   font-size: 20px;
 }
 
+.subheading-18 {
+  font-size: 18px;
+}
+
 .button-text {
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .regular {
@@ -99,11 +104,11 @@ ul {
 }
 
 .h1 {
-  font-size: 96px;
+  font-size: 60px;
 }
 
 .h2 {
-  font-size: 64px;
+  font-size: 48px;
 }
 
 .h3 {
@@ -111,11 +116,11 @@ ul {
 }
 
 .h4 {
-  font-size: 24px;
+  font-size: 20px;
 }
 
 .h5 {
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .input, .textarea {
@@ -139,7 +144,7 @@ ul {
   border: 2px solid #F8F9FE;
   cursor: pointer;
   background-color: #F8F9FE;
-  transition: background-color linear 0.2s;
+  transition: background-color linear 0.2s, border-color linear 0.2s;
 }
 .button:hover, .button:focus {
   background-color: #e2e6fb;
@@ -151,6 +156,7 @@ ul {
 }
 .button.button-primary:hover, .button.button-primary:focus {
   background-color: #143ccb;
+  border-color: #143ccb;
 }
 .button.button-outline {
   border: 2px solid;
@@ -452,7 +458,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .container {
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 5%;
   max-width: 1720px;
 }
 @media (max-width: 1440px) {
@@ -561,14 +567,9 @@ header {
 }
 
 .header__btn {
-  padding: 20px 70px;
-  border-radius: 15px;
+  padding: 10px 40px;
+  border-radius: 7px;
   border-width: 3px;
-}
-@media (max-width: 1440px) {
-  .header__btn {
-    padding: 20px 60px;
-  }
 }
 @media (max-width: 1024px) {
   .header__btn {
@@ -584,6 +585,7 @@ header {
   background: url(../img/intro-background.jpg);
   background-color: #F8F9FE;
   background-size: cover;
+  overflow-x: hidden;
 }
 @media (max-width: 1024px) {
   .intro {
@@ -596,6 +598,7 @@ header {
   top: 0;
   right: 0;
   z-index: 1;
+  animation: 6s infinite alternate bgshake;
 }
 @media (max-width: 1024px) {
   .intro__pattern {
@@ -621,6 +624,7 @@ header {
   .intro__intro {
     flex-direction: column;
     text-align: center;
+    margin-bottom: 0;
   }
 }
 
@@ -705,7 +709,7 @@ header {
   background-image: linear-gradient(124.46deg, rgba(46, 46, 46, 0.7) 0%, rgba(30, 30, 30, 0.7) 100%), url(../img/img-gradient.png);
   background-size: cover;
   border-radius: 80px;
-  padding: 132px 176px;
+  padding: 62px 176px;
   display: flex;
   flex-direction: column;
   gap: 48px;
@@ -737,10 +741,7 @@ header {
 }
 
 .video__title {
-  max-width: 670px;
-}
-.video__title i {
-  font-size: 36px;
+  max-width: 400px;
 }
 @media (max-width: 1024px) {
   .video__title {
@@ -881,8 +882,13 @@ header {
 
 .why__reasons {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   gap: 24px;
+}
+@media (max-width: 1440px) {
+  .why__reasons {
+    justify-content: space-between;
+  }
 }
 @media (max-width: 1024px) {
   .why__reasons {
@@ -896,6 +902,7 @@ header {
   flex-direction: column;
   gap: 20px;
   flex-basis: 22.5%;
+  padding: 0 30px;
 }
 .why__reason > div {
   display: flex;
@@ -910,10 +917,10 @@ header {
     font-size: 48px;
   }
   .why__reason span {
-    font-size: 20px;
+    font-size: 14px;
   }
   .why__reason > p {
-    font-size: 18px;
+    font-size: 15px;
   }
 }
 @media (max-width: 1440px) {
@@ -930,6 +937,7 @@ header {
 @media (max-width: 768px) {
   .why__reason {
     flex-basis: 100%;
+    padding: 0;
   }
 }
 
@@ -956,7 +964,7 @@ header {
 }
 
 .features__title {
-  margin-bottom: 76px;
+  margin-bottom: 46px;
 }
 @media (max-width: 1024px) {
   .features__title {
@@ -974,14 +982,19 @@ header {
 }
 
 .features__feature {
-  padding: 32px 48px;
-  border-radius: 40px;
+  padding: 32px;
+  border-radius: 30px;
   box-shadow: 0px 30px 40px 0px rgba(0, 0, 0, 0.1019607843);
   background-color: #FFFFFF;
   display: flex;
   align-items: flex-start;
   flex-basis: 48%;
-  gap: 24px;
+  gap: 54px;
+}
+.features__feature > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 @media (max-width: 1440px) {
   .features__feature {
@@ -1080,8 +1093,8 @@ header {
 }
 
 .reviews__review {
-  padding: 20px;
-  flex-basis: 30%;
+  padding: 30px 30px;
+  flex-basis: 32%;
   display: flex;
   align-items: flex-start;
   gap: 32px;
@@ -1247,3 +1260,21 @@ footer a {
     gap: 24px;
   }
 }
+
+@keyframes bgshake {
+  0% {
+    top: 0;
+    right: 0;
+    transform: rotate(0deg);
+  }
+  50% {
+    top: -24px;
+    right: -10px;
+    transform: rotate(1deg);
+  }
+  100% {
+    top: 0;
+    right: 0;
+    transform: rotate(0deg);
+  }
+}/*# sourceMappingURL=index.css.map */

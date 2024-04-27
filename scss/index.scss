@@ -151,6 +151,7 @@ header {
   min-height: calc(100vh - 196px);
   padding-top: 196px;
   position: relative;
+  overflow: hidden;
 
   background: url(../img/intro-background.jpg);
   background-color: $cLightGray;
@@ -166,6 +167,7 @@ header {
   top: 0;
   right: 0;
   z-index: 1;
+  animation: 6s infinite alternate bgshake;
 
   @media(max-width: 1024px) {
     width: 50%;
@@ -240,15 +242,21 @@ header {
   gap: 72px;
 }
 
-.intro__btn {
-  padding: 20px 80px;
-  border-radius: 0;
+.intro__btn, .watch__btn {
+  padding: 20px 60px;
+  border-radius: 7px;
+  margin: 5px;
   background: transparent;
   width: fit-content;
-
   @media(max-width: 768px) {
     padding: 20px 40px;
   }
+}
+.intro__btn {
+  margin-left: 0;
+}
+.watch__btn {
+  margin-right: 0;
 }
 
 .intro__content {
@@ -277,7 +285,7 @@ header {
   background-size: cover;
 
   border-radius: 80px;
-  padding: 132px 176px;
+  padding: 62px 176px;
 
   display: flex;
   flex-direction: column;
@@ -308,8 +316,7 @@ header {
 }
 
 .video__title {
-  max-width: 400px;
-
+  width: 50%;
   // i {
   //   font-size: 36px;
   // }
@@ -317,6 +324,7 @@ header {
 
   @media(max-width: 1024px) {
     max-width: none;
+    width: 100%;
   }
 
   @media(max-width: 768px) {
@@ -337,7 +345,7 @@ header {
 }
 
 .video__video {
-  height: 650px;
+  height: 500px;
   border-radius: 15px;
   background-color: $cText;
 
@@ -493,11 +501,11 @@ header {
     }
 
     span {
-      font-size: 18px;
+      font-size: 14px;
     }
 
     >p {
-      font-size: 16px;
+      font-size: 15px;
     }
   }
 
@@ -539,7 +547,7 @@ header {
 }
 
 .features__title {
-  margin-bottom: 76px;
+  margin-bottom: 46px;
 
   @media(max-width: 1024px) {
     margin-bottom: 32px;
@@ -840,3 +848,22 @@ footer {
   }
 }
 
+
+
+@keyframes bgshake {
+  0% {
+    top: 0;
+    right: 0;
+    transform: rotate(0deg);
+  }
+  50% {
+    top: -24px;
+    right: -10px;
+    transform: rotate(1deg);
+  }
+  100% {
+    top: 0;
+    right: 0;
+    transform: rotate(0deg);
+  }
+}

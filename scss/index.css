@@ -111,7 +111,7 @@ ul {
 }
 
 .h3 {
-  font-size: 24px;
+  font-size: 32px;
 }
 
 .h4 {
@@ -161,7 +161,7 @@ ul {
   border: 2px solid;
   border-image-slice: 1;
   border-width: 2px;
-  border-image-source: linear-gradient(90deg, #2853EA 0%, #245BC5 100%);
+  border-color: #245BC5;
 }
 
 .subscription-warning {
@@ -265,10 +265,10 @@ ul {
 }
 .plan.free .plan__background {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 30%;
+  left: 75%;
   transform: translate(-50%, -50%);
-  width: 100%;
+  width: 35%;
   z-index: 1;
   opacity: 0.4;
 }
@@ -581,6 +581,7 @@ header {
   min-height: calc(100vh - 196px);
   padding-top: 196px;
   position: relative;
+  overflow: hidden;
   background: url(../img/intro-background.jpg);
   background-color: #F8F9FE;
   background-size: cover;
@@ -596,6 +597,7 @@ header {
   top: 0;
   right: 0;
   z-index: 1;
+  animation: 6s infinite alternate bgshake;
 }
 @media (max-width: 1024px) {
   .intro__pattern {
@@ -669,17 +671,26 @@ header {
   gap: 72px;
 }
 
-.intro__btn {
-  padding: 20px 80px;
-  border-radius: 0;
+.intro__btn, .watch__btn {
+  padding: 20px 60px;
+  border-radius: 7px;
+  margin: 5px;
   background: transparent;
   width: -moz-fit-content;
   width: fit-content;
 }
 @media (max-width: 768px) {
-  .intro__btn {
+  .intro__btn, .watch__btn {
     padding: 20px 40px;
   }
+}
+
+.intro__btn {
+  margin-left: 0;
+}
+
+.watch__btn {
+  margin-right: 0;
 }
 
 .intro__content {
@@ -705,7 +716,7 @@ header {
   background-image: linear-gradient(124.46deg, rgba(46, 46, 46, 0.7) 0%, rgba(30, 30, 30, 0.7) 100%), url(../img/img-gradient.png);
   background-size: cover;
   border-radius: 80px;
-  padding: 132px 176px;
+  padding: 62px 176px;
   display: flex;
   flex-direction: column;
   gap: 48px;
@@ -737,11 +748,12 @@ header {
 }
 
 .video__title {
-  max-width: 400px;
+  width: 50%;
 }
 @media (max-width: 1024px) {
   .video__title {
     max-width: none;
+    width: 100%;
   }
 }
 @media (max-width: 768px) {
@@ -763,7 +775,7 @@ header {
 }
 
 .video__video {
-  height: 650px;
+  height: 500px;
   border-radius: 15px;
   background-color: #1E1E1E;
 }
@@ -913,10 +925,10 @@ header {
     font-size: 48px;
   }
   .why__reason span {
-    font-size: 18px;
+    font-size: 14px;
   }
   .why__reason > p {
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 @media (max-width: 1440px) {
@@ -960,7 +972,7 @@ header {
 }
 
 .features__title {
-  margin-bottom: 76px;
+  margin-bottom: 46px;
 }
 @media (max-width: 1024px) {
   .features__title {
@@ -1254,5 +1266,23 @@ footer a {
   .footer__nav {
     flex-direction: column;
     gap: 24px;
+  }
+}
+
+@keyframes bgshake {
+  0% {
+    top: 0;
+    right: 0;
+    transform: rotate(0deg);
+  }
+  50% {
+    top: -24px;
+    right: -10px;
+    transform: rotate(1deg);
+  }
+  100% {
+    top: 0;
+    right: 0;
+    transform: rotate(0deg);
   }
 }/*# sourceMappingURL=index.css.map */
