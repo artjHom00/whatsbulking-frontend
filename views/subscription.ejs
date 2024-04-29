@@ -5,28 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Subscription</title>
 
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <header>
-    <div class="container">
-      <div class="header__inner">
-        <div class="header__logo">
-          <a href="#">
-            <span class="subheading logo">WhatsBulking</span>
-          </a>
-        </div>
-        <div class="header__icons">
-          <a href="#">
-            <object id="svg1" data="./img/icons/header/faq.svg" type="image/svg+xml"></object>
-          </a>
-          <button id="burger">
-            <object data="./img/icons/header/menu.svg" type="image/svg+xml"></object>
-          </button>
-        </div>
-      </div>
-    </div>
-  </header>
+  <%- include('./components/header.ejs') %>
 
   <div class="container page-container">
     <aside id="aside">
@@ -34,33 +16,33 @@
       <nav class="aside__menu">
         <ul>
           <li class="aside__menu-item">
-            <a href="./dashboard.html" aria-label="Home">
-              <object data="./img/icons/menu/home.svg" type="image/svg+xml"></object>
+            <a href="/demo/dashboard" aria-label="Home">
+              <object data="/img/icons/menu/home.svg" type="image/svg+xml"></object>
               <span>Home</span>
             </a>
           </li>
           <li class="aside__menu-item load">
-            <a href="./campaigns.html" aria-label="Campaigns">
-              <object data="./img/icons/menu/campaigns.svg" type="image/svg+xml"></object>
+            <a href="/demo/campaigns" aria-label="Campaigns">
+              <object data="/img/icons/menu/campaigns.svg" type="image/svg+xml"></object>
               <span>Campaigns</span>
             </a>
           </li>
           <li class="aside__menu-item">
-            <a href="./support.html" aria-label="Support">
-              <object data="./img/icons/menu/support.svg" type="image/svg+xml"></object>
+            <a href="/demo/support" aria-label="Support">
+              <object data="/img/icons/menu/support.svg" type="image/svg+xml"></object>
 
               <span>Support</span>
             </a>
           </li>
           <li class="aside__menu-item active">
-            <a href="./subscription.html" aria-label="Subscription">
-              <object data="./img/icons/menu/subscription.svg" type="image/svg+xml"></object>
+            <a href="/demo/subscription" aria-label="Subscription">
+              <object data="/img/icons/menu/subscription.svg" type="image/svg+xml"></object>
               <span>Subscription</span>
             </a>
           </li>
           <li class="aside__menu-item">
-            <a href="./earn-with-us.html" aria-label="Earn with us">
-              <object data="./img/icons/menu/earn-with-us.svg" type="image/svg+xml"></object>
+            <a href="/demo/earn-with-us" aria-label="Earn with us">
+              <object data="/img/icons/menu/earn-with-us.svg" type="image/svg+xml"></object>
               <span>Earn with us</span>
             </a>
           </li>
@@ -75,7 +57,7 @@
           <p class="opacity small">Access all the subscription information here</p>
         </div>
         <div class="subscription-warning subscription__warning">
-          <object data="./img/icons/error.svg" type="image/svg+xml"></object>
+          <object data="/img/icons/error.svg" type="image/svg+xml"></object>
           <div class="subscription-warning__info">
             <h4 class="h4 subscription-warning__title">Your Subscription Expires Soon</h4>
             <p class="opacity">Make sure to make the payment before the subscription expires</p>
@@ -83,15 +65,15 @@
         </div>
         <div class="info subscription__info">
           <div>
-            <object data="./img/icons/info/warning.svg" type="image/svg+xml"></object>
+            <object data="/img/icons/info/warning.svg" type="image/svg+xml"></object>
             <p class="opacity">Current Subscription: Premium</p>
           </div>
           <div>
-            <object data="./img/icons/info/email.svg" type="image/svg+xml"></object>
+            <object data="/img/icons/info/email.svg" type="image/svg+xml"></object>
             <p class="opacity">Available Messages: 3 381</p>
           </div>
           <div>
-            <object data="./img/icons/info/future.svg" type="image/svg+xml"></object>
+            <object data="/img/icons/info/future.svg" type="image/svg+xml"></object>
             <p class="opacity">Expires On: 15/04/2024</p>
           </div>
         </div>
@@ -157,6 +139,6 @@
     </div>
   </footer>
 
-  <script src="./js/script.js"></script>
+  <script src="/js/script.js"></script>
 </body>
 </html>

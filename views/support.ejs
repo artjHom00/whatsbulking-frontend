@@ -5,28 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Support</title>
 
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <header>
-    <div class="container">
-      <div class="header__inner">
-        <div class="header__logo">
-          <a href="#">
-            <span class="subheading logo">WhatsBulking</span>
-          </a>
-        </div>
-        <div class="header__icons">
-          <a href="#">
-            <object id="svg1" data="./img/icons/header/faq.svg" type="image/svg+xml"></object>
-          </a>
-          <button id="burger">
-            <object data="./img/icons/header/menu.svg" type="image/svg+xml"></object>
-          </button>
-        </div>
-      </div>
-    </div>
-  </header>
+  <%- include('./components/header.ejs') %>
 
   <div class="container page-container">
     <aside id="aside">
@@ -34,33 +16,33 @@
       <nav class="aside__menu">
         <ul>
           <li class="aside__menu-item">
-            <a href="./dashboard.html" aria-label="Home">
-              <object data="./img/icons/menu/home.svg" type="image/svg+xml"></object>
+            <a href="/demo/dashboard" aria-label="Home">
+              <object data="/img/icons/menu/home.svg" type="image/svg+xml"></object>
               <span>Home</span>
             </a>
           </li>
           <li class="aside__menu-item load">
-            <a href="./campaigns.html" aria-label="Campaigns">
-              <object data="./img/icons/menu/campaigns.svg" type="image/svg+xml"></object>
+            <a href="/demo/campaigns" aria-label="Campaigns">
+              <object data="/img/icons/menu/campaigns.svg" type="image/svg+xml"></object>
               <span>Campaigns</span>
             </a>
           </li>
           <li class="aside__menu-item active">
-            <a href="./support.html" aria-label="Support">
-              <object data="./img/icons/menu/support.svg" type="image/svg+xml"></object>
+            <a href="/demo/support" aria-label="Support">
+              <object data="/img/icons/menu/support.svg" type="image/svg+xml"></object>
 
               <span>Support</span>
             </a>
           </li>
           <li class="aside__menu-item">
-            <a href="./subscription.html" aria-label="Subscription">
-              <object data="./img/icons/menu/subscription.svg" type="image/svg+xml"></object>
+            <a href="/demo/subscription" aria-label="Subscription">
+              <object data="/img/icons/menu/subscription.svg" type="image/svg+xml"></object>
               <span>Subscription</span>
             </a>
           </li>
           <li class="aside__menu-item">
-            <a href="./earn-with-us.html" aria-label="Earn with us">
-              <object data="./img/icons/menu/earn-with-us.svg" type="image/svg+xml"></object>
+            <a href="/demo/earn-with-us" aria-label="Earn with us">
+              <object data="/img/icons/menu/earn-with-us.svg" type="image/svg+xml"></object>
               <span>Earn with us</span>
             </a>
           </li>
@@ -77,10 +59,10 @@
           </div>
           <div class="support__contacts">
             <a href="#">
-              <object data="./img/icons/telegram.svg" type="image/svg+xml"></object>
+              <object data="/img/icons/telegram.svg" type="image/svg+xml"></object>
             </a>
             <a href="#">
-              <object data="./img/icons/whatsapp.svg" type="image/svg+xml"></object>
+              <object data="/img/icons/whatsapp.svg" type="image/svg+xml"></object>
             </a>
           </div>
           <div class="support__post">
@@ -110,6 +92,6 @@
     </div>
   </footer>
   
-  <script src="./js/script.js"></script>
+  <script src="/js/script.js"></script>
 </body>
 </html>

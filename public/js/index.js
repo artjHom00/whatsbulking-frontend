@@ -48,9 +48,10 @@ document.addEventListener('DOMContentLoaded', () => {
     
     targetEl.style.padding = `0 ${progressToFour}%`
     videoInner.style.borderRadius = `${progressToEighty}px`
-   
 
-    // if(progress > 0.000)
-    // if(e.progress.)
-  });;
+  });
+
+  MicroModal.init();
+
 })
+

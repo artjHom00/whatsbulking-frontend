@@ -1,0 +1,30 @@
+<header>
+    <div class="container">
+      <div class="header__inner">
+        <div class="header__logo">
+          <a href="#">
+            <span class="subheading logo">Your Company Name</span><br>
+            <p class="small opacity"><%- new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }) %></p>
+          </a>
+        </div>
+        <div class="header__icons">
+          <a href="/">
+            <button class="button button-outline demo__btn" style="height: 43.2px">
+                <object data="/img/icons/menu/home.svg" type="image/svg+xml"></object>
+            </button>
+          </a>
+          <a href="#">
+            <button class="button button-primary demo__btn">
+              ⚡️ Get Started!
+            </button>
+          </a>
+          <a href="#">
+            <object data="/img/icons/header/faq.svg" type="image/svg+xml"></object>
+          </a>
+          <button id="burger">
+            <object data="/img/icons/header/menu.svg" type="image/svg+xml"></object>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>

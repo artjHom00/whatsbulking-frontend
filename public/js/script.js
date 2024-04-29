@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Aside Menu
   const aside = document.getElementById('aside')
   const burger = document.getElementById('burger')
+  window.lastActiveTemplate = null
 
   burger.addEventListener('click', (event) => {
     event.preventDefault()
@@ -25,18 +26,41 @@ document.addEventListener('DOMContentLoaded', function() {
     })
   })
 
+  const dynamicDataButtons = document.querySelectorAll('.add-dynamic-data')
+  dynamicDataButtons?.forEach(dynamicData => {
+    dynamicData.addEventListener('click', (event) => {
+      event.preventDefault()
+      const static = {
+        "User Name": "%user_name%",
+        "Phone Number": "%phone_number%",
+        "Today Date": "%today%"
+      }
+      
+      if(lastActiveTemplate) {
+        const dynamicDataValue = static[dynamicData.innerHTML]
+        console.log("🚀 ~ dynamicData.addEventListener ~ dynamicData.innerHTML:", dynamicData.innerHTML)
+        console.log("🚀 ~ dynamicData.addEventListener ~ dynamicData.innerHTML:", static[dynamicData.innerHTML])
+
+        lastActiveTemplate.value += dynamicDataValue
+      }
+
+    })
+  })
+
   // Add template
   const addTemplate = document.getElementById('add-template')
   addTemplate?.addEventListener('click', (event) => {
     event.preventDefault()
     const templates = document.getElementById('templates')
-    const template = document.getElementById('template').cloneNode()
-    template.tabIndex = templates.childElementCount + 2
+    const template = document.getElementById('template').cloneNode(true)
+
+    
+    template.tabIndex = templates.lastChild.tabIndex + 1
     if(templates.childElementCount < 10) {
       templates.appendChild(template)
     }
     if(templates.childElementCount === 10) {
-      addTemplate.remove()
+      addTemplate.style.display = 'none';
     }
   })
 

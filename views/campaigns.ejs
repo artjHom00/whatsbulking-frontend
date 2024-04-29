@@ -4,28 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Campaigns</title>
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <header>
-    <div class="container">
-      <div class="header__inner">
-        <div class="header__logo">
-          <a href="#">
-            <span class="subheading logo">WhatsBulking</span>
-          </a>
-        </div>
-        <div class="header__icons">
-          <a href="#">
-            <object id="svg1" data="./img/icons/header/faq.svg" type="image/svg+xml"></object>
-          </a>
-          <button id="burger">
-            <object data="./img/icons/header/menu.svg" type="image/svg+xml"></object>
-          </button>
-        </div>
-      </div>
-    </div>
-  </header>
+  <%- include('./components/header.ejs') %>
 
   <div class="container page-container">
     <aside id="aside">
@@ -33,33 +15,33 @@
       <nav class="aside__menu">
         <ul>
           <li class="aside__menu-item">
-            <a href="./dashboard.html" aria-label="Home">
-              <object data="./img/icons/menu/home.svg" type="image/svg+xml"></object>
+            <a href="/demo/dashboard" aria-label="Home">
+              <object data="/img/icons/menu/home.svg" type="image/svg+xml"></object>
               <span>Home</span>
             </a>
           </li>
           <li class="aside__menu-item active load">
-            <a href="./campaigns.html" aria-label="Campaigns">
-              <object data="./img/icons/menu/campaigns.svg" type="image/svg+xml"></object>
+            <a href="/demo/campaigns" aria-label="Campaigns">
+              <object data="/img/icons/menu/campaigns.svg" type="image/svg+xml"></object>
               <span>Campaigns</span>
             </a>
           </li>
           <li class="aside__menu-item">
-            <a href="./support.html" aria-label="Support">
-              <object data="./img/icons/menu/support.svg" type="image/svg+xml"></object>
+            <a href="/demo/support" aria-label="Support">
+              <object data="/img/icons/menu/support.svg" type="image/svg+xml"></object>
 
               <span>Support</span>
             </a>
           </li>
           <li class="aside__menu-item">
-            <a href="./subscription.html" aria-label="Subscription">
-              <object data="./img/icons/menu/subscription.svg" type="image/svg+xml"></object>
+            <a href="/demo/subscription" aria-label="Subscription">
+              <object data="/img/icons/menu/subscription.svg" type="image/svg+xml"></object>
               <span>Subscription</span>
             </a>
           </li>
           <li class="aside__menu-item">
-            <a href="./earn-with-us.html" aria-label="Earn with us">
-              <object data="./img/icons/menu/earn-with-us.svg" type="image/svg+xml"></object>
+            <a href="/demo/earn-with-us" aria-label="Earn with us">
+              <object data="/img/icons/menu/earn-with-us.svg" type="image/svg+xml"></object>
               <span>Earn with us</span>
             </a>
           </li>
@@ -69,7 +51,7 @@
 
     <main>
       <!-- <div class="subscription-warning campaigns__warning">
-        <object data="./img/icons/error.svg" type="image/svg+xml"></object>
+        <object data="/img/icons/error.svg" type="image/svg+xml"></object>
         <div class="subscription-warning__info">
           <h4 class="h4 subscription-warning__title">Your Subscription Expires Soon</h4>
           <p class="opacity">Make sure to make the payment before the subscription expires</p>
@@ -85,7 +67,7 @@
           <div class="accordeon__title">
             <h4 class="h4">Active / In Queue</h4>
             <button class="active">
-              <object data="./img/icons/arrow-expand.svg" type="image/svg+xml"></object>
+              <object data="/img/icons/arrow-expand.svg" type="image/svg+xml"></object>
             </button>
           </div>
           <div class="accordeon__content">
@@ -93,7 +75,7 @@
               <div class="campaigns__card active loading">
                 <div class="campaigns__card-info">
                   <div>
-                    <object data="./img/icons/campaigns/status/load.svg" type="image/svg+xml"></object>
+                    <object data="/img/icons/campaigns/status/load.svg" type="image/svg+xml"></object>
                   </div>
                   <div>
                     <span class="smaller opacity">13 Feb 2024</span>
@@ -101,22 +83,22 @@
                   </div>
                   <div class="campaigns__card-data">
                     <div class="opacity">
-                      <object data="./img/icons/campaigns/info/error.svg" type="image/svg+xml"></object>
+                      <object data="/img/icons/campaigns/info/error.svg" type="image/svg+xml"></object>
                       1 173</div>
-                    <div class="opacity"><object data="./img/icons/campaigns/info/approval.svg" type="image/svg+xml"></object>5 327</div>
-                    <div><object data="./img/icons/campaigns/info/sms.svg" type="image/svg+xml"></object>6 480 / 20 000</div>
+                    <div class="opacity"><object data="/img/icons/campaigns/info/approval.svg" type="image/svg+xml"></object>5 327</div>
+                    <div><object data="/img/icons/campaigns/info/sms.svg" type="image/svg+xml"></object>6 480 / 20 000</div>
                   </div>
                 </div>
                 <div class="campaigns__card-actions">
-                  <button><object data="./img/icons/campaigns/actions/close.svg" type="image/svg+xml"></object></button>
-                  <button><object data="./img/icons/campaigns/actions/pause.svg" type="image/svg+xml"></object></button>
-                  <button><object data="./img/icons/campaigns/actions/download.svg" type="image/svg+xml"></object></button>
+                  <button><object data="/img/icons/campaigns/actions/close.svg" type="image/svg+xml"></object></button>
+                  <button><object data="/img/icons/campaigns/actions/pause.svg" type="image/svg+xml"></object></button>
+                  <button><object data="/img/icons/campaigns/actions/download.svg" type="image/svg+xml"></object></button>
                 </div>
               </div>
               <div class="campaigns__card active">
                 <div class="campaigns__card-info">
                   <div>
-                    <object data="./img/icons/campaigns/status/clock.svg" type="image/svg+xml"></object>
+                    <object data="/img/icons/campaigns/status/clock.svg" type="image/svg+xml"></object>
                   </div>
                   <div>
                     <span class="smaller opacity">In queue</span>
@@ -124,16 +106,16 @@
                   </div>
                   <div class="campaigns__card-data">
                     <div class="opacity">
-                      <object data="./img/icons/campaigns/info/error.svg" type="image/svg+xml"></object>
+                      <object data="/img/icons/campaigns/info/error.svg" type="image/svg+xml"></object>
                       1 173</div>
-                    <div class="opacity"><object data="./img/icons/campaigns/info/approval.svg" type="image/svg+xml"></object>5 327</div>
-                    <div><object data="./img/icons/campaigns/info/sms.svg" type="image/svg+xml"></object>6 480 / 20 000</div>
+                    <div class="opacity"><object data="/img/icons/campaigns/info/approval.svg" type="image/svg+xml"></object>5 327</div>
+                    <div><object data="/img/icons/campaigns/info/sms.svg" type="image/svg+xml"></object>6 480 / 20 000</div>
                   </div>
                 </div>
                 <div class="campaigns__card-actions">
-                  <button><object data="./img/icons/campaigns/actions/close.svg" type="image/svg+xml"></object></button>
-                  <button><object data="./img/icons/campaigns/actions/pause.svg" type="image/svg+xml"></object></button>
-                  <button><object data="./img/icons/campaigns/actions/download.svg" type="image/svg+xml"></object></button>
+                  <button><object data="/img/icons/campaigns/actions/close.svg" type="image/svg+xml"></object></button>
+                  <button><object data="/img/icons/campaigns/actions/pause.svg" type="image/svg+xml"></object></button>
+                  <button><object data="/img/icons/campaigns/actions/download.svg" type="image/svg+xml"></object></button>
                 </div>
               </div>
             </div>
@@ -143,7 +125,7 @@
           <div class="accordeon__title">
             <h4 class="h4">Finished Campaigns</h4>
             <button class="active">
-              <object data="./img/icons/arrow-expand.svg" type="image/svg+xml"></object>
+              <object data="/img/icons/arrow-expand.svg" type="image/svg+xml"></object>
             </button>
           </div>
           <div class="accordeon__content">
@@ -151,7 +133,7 @@
               <div class="campaigns__card">
                 <div class="campaigns__card-info">
                   <div>
-                    <object data="./img/icons/campaigns/status/cross.svg" type="image/svg+xml"></object>
+                    <object data="/img/icons/campaigns/status/cross.svg" type="image/svg+xml"></object>
                   </div>
                   <div>
                     <span class="smaller opacity">15 Nov 2023</span>
@@ -159,20 +141,20 @@
                   </div>
                   <div class="campaigns__card-data">
                     <div class="opacity">
-                      <object data="./img/icons/campaigns/info/error.svg" type="image/svg+xml"></object>
+                      <object data="/img/icons/campaigns/info/error.svg" type="image/svg+xml"></object>
                       1 173</div>
-                    <div class="opacity"><object data="./img/icons/campaigns/info/approval.svg" type="image/svg+xml"></object>5 327</div>
-                    <div><object data="./img/icons/campaigns/info/sms.svg" type="image/svg+xml"></object>20 000 / 20 000</div>
+                    <div class="opacity"><object data="/img/icons/campaigns/info/approval.svg" type="image/svg+xml"></object>5 327</div>
+                    <div><object data="/img/icons/campaigns/info/sms.svg" type="image/svg+xml"></object>20 000 / 20 000</div>
                   </div>
                 </div>
                 <div class="campaigns__card-actions">
-                  <button><object data="./img/icons/campaigns/actions/download.svg" type="image/svg+xml"></object></button>
+                  <button><object data="/img/icons/campaigns/actions/download.svg" type="image/svg+xml"></object></button>
                 </div>
               </div>
               <div class="campaigns__card">
                 <div class="campaigns__card-info">
                   <div>
-                    <object data="./img/icons/campaigns/status/cross.svg" type="image/svg+xml"></object>
+                    <object data="/img/icons/campaigns/status/cross.svg" type="image/svg+xml"></object>
                   </div>
                   <div>
                     <span class="smaller opacity">15 Nov 2023</span>
@@ -180,20 +162,20 @@
                   </div>
                   <div class="campaigns__card-data">
                     <div class="opacity">
-                      <object data="./img/icons/campaigns/info/error.svg" type="image/svg+xml"></object>
+                      <object data="/img/icons/campaigns/info/error.svg" type="image/svg+xml"></object>
                       1 173</div>
-                    <div class="opacity"><object data="./img/icons/campaigns/info/approval.svg" type="image/svg+xml"></object>5 327</div>
-                    <div><object data="./img/icons/campaigns/info/sms.svg" type="image/svg+xml"></object>20 000 / 20 000</div>
+                    <div class="opacity"><object data="/img/icons/campaigns/info/approval.svg" type="image/svg+xml"></object>5 327</div>
+                    <div><object data="/img/icons/campaigns/info/sms.svg" type="image/svg+xml"></object>20 000 / 20 000</div>
                   </div>
                 </div>
                 <div class="campaigns__card-actions">
-                  <button><object data="./img/icons/campaigns/actions/download.svg" type="image/svg+xml"></object></button>
+                  <button><object data="/img/icons/campaigns/actions/download.svg" type="image/svg+xml"></object></button>
                 </div>
               </div>
               <div class="campaigns__card">
                 <div class="campaigns__card-info">
                   <div>
-                    <object data="./img/icons/campaigns/status/cross.svg" type="image/svg+xml"></object>
+                    <object data="/img/icons/campaigns/status/cross.svg" type="image/svg+xml"></object>
                   </div>
                   <div>
                     <span class="smaller opacity">15 Nov 2023</span>
@@ -201,25 +183,25 @@
                   </div>
                   <div class="campaigns__card-data">
                     <div class="opacity">
-                      <object data="./img/icons/campaigns/info/error.svg" type="image/svg+xml"></object>
+                      <object data="/img/icons/campaigns/info/error.svg" type="image/svg+xml"></object>
 
                       1 173
                     </div>
                     <div class="opacity">
-                      <object data="./img/icons/campaigns/info/approval.svg" type="image/svg+xml"></object>
+                      <object data="/img/icons/campaigns/info/approval.svg" type="image/svg+xml"></object>
                       5 327
                     </div>
-                    <div><object data="./img/icons/campaigns/info/sms.svg" type="image/svg+xml"></object>20 000 / 20 000</div>
+                    <div><object data="/img/icons/campaigns/info/sms.svg" type="image/svg+xml"></object>20 000 / 20 000</div>
                   </div>
                 </div>
                 <div class="campaigns__card-actions">
-                  <button><object data="./img/icons/campaigns/actions/download.svg" type="image/svg+xml"></object></button>
+                  <button><object data="/img/icons/campaigns/actions/download.svg" type="image/svg+xml"></object></button>
                 </div>
               </div>
               <div class="campaigns__card">
                 <div class="campaigns__card-info">
                   <div>
-                    <object data="./img/icons/campaigns/status/tick.svg" type="image/svg+xml"></object>
+                    <object data="/img/icons/campaigns/status/tick.svg" type="image/svg+xml"></object>
                   </div>
                   <div>
                     <span class="smaller opacity">15 Nov 2023</span>
@@ -227,14 +209,14 @@
                   </div>
                   <div class="campaigns__card-data">
                     <div class="opacity">
-                      <object data="./img/icons/campaigns/info/error.svg" type="image/svg+xml"></object>
+                      <object data="/img/icons/campaigns/info/error.svg" type="image/svg+xml"></object>
                       1 173</div>
-                    <div class="opacity"><object data="./img/icons/campaigns/info/approval.svg" type="image/svg+xml"></object>5 327</div>
-                    <div><object data="./img/icons/campaigns/info/sms.svg" type="image/svg+xml"></object>20 000 / 20 000</div>
+                    <div class="opacity"><object data="/img/icons/campaigns/info/approval.svg" type="image/svg+xml"></object>5 327</div>
+                    <div><object data="/img/icons/campaigns/info/sms.svg" type="image/svg+xml"></object>20 000 / 20 000</div>
                   </div>
                 </div>
                 <div class="campaigns__card-actions">
-                  <button><object data="./img/icons/campaigns/actions/download.svg" type="image/svg+xml"></object></button>
+                  <button><object data="/img/icons/campaigns/actions/download.svg" type="image/svg+xml"></object></button>
                 </div>
               </div>
             </div>
@@ -261,6 +243,6 @@
     </div>
   </footer>
   
-  <script src="./js/script.js"></script>
+  <script src="/js/script.js"></script>
 </body>
 </html>

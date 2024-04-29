@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WhatsApp Service</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <script>
+  function  enforceMinMax(el) {
+    if (el.value != "") {
+      if (parseInt(el.value) < parseInt(el.min)) {
+        el.value = el.min;
+      }
+      if (parseInt(el.value) > parseInt(el.max)) {
+        el.value = el.max;
+      }
+    }
+  }
+
+  function removeTemplate(el) {
+
+    const templateFields = document.querySelector('#templates').childElementCount - 1
+    const addTemplate = document.getElementById('add-template')
+
+    
+    if(templateFields < 1) return false
+    
+    el.parentNode.remove()
+    
+    if(templateFields < 10) {
+      addTemplate.style.display = 'block';
+    }
+
+  }
+
+  function setActiveOnClick(el) {
+    window.lastActiveTemplate = el
+  }
+
+  </script>
+</head>
+<body>
+  <%- include('./components/header.ejs') %>
+
+  <div class="container page-container">
+    <aside id="aside">
+      <h5 class="h5 aside__title">Dashboard</h5>
+      <nav class="aside__menu">
+        <ul>
+          <li class="aside__menu-item active">
+            <a href="/demo/dashboard" aria-label="Home">
+              <object data="/img/icons/menu/home.svg" type="image/svg+xml"></object>
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="aside__menu-item load">
+            <a href="/demo/campaigns" aria-label="Campaigns">
+              <object data="/img/icons/menu/campaigns.svg" type="image/svg+xml"></object>
+              <span>Campaigns</span>
+            </a>
+          </li>
+          <li class="aside__menu-item">
+            <a href="/demo/support" aria-label="Support">
+              <object data="/img/icons/menu/support.svg" type="image/svg+xml"></object>
+              <span>Support</span>
+            </a>
+          </li>
+          <li class="aside__menu-item">
+            <a href="/demo/subscription" aria-label="Subscription">
+              <object data="/img/icons/menu/subscription.svg" type="image/svg+xml"></object>
+              <span>Subscription</span>
+            </a>
+          </li>
+          <li class="aside__menu-item">
+            <a href="/demo/earn-with-us" aria-label="Earn with us">
+              <object data="/img/icons/menu/earn-with-us.svg" type="image/svg+xml"></object>
+              <span>Earn with us</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main>
+      <section class="start">
+        <form action="post">
+          <div class="headline">
+            <h3 class="h3" class="title">Hi, Company Name</h3>
+            <p class="opacity small">Start a new campaign here!</p>
+          </div>
+          <div class="start__info info">
+            <div>
+              <object data="/img/icons/info/warning.svg" type="image/svg+xml"></object>
+              <p class="opacity">Current Subscription: Premium</p>
+            </div>
+            <div>
+              <object data="/img/icons/info/future.svg" type="image/svg+xml"></object>
+              <p class="opacity">Expires: 27/05/2024 (18 days)</p>
+            </div>
+          </div>
+          <div>
+            <h4 class="h4 start__heading">Upload a list of numbers</h4>
+            <div class="start__upload">
+              <input type="file" id="file-upload" style="display: none;" name="file-upload" class="input">
+              <label for="file-upload" tabindex="1">
+                <div>
+                  <object data="/img/icons/file-upload.svg" type="image/svg+xml"></object>
+                </div>
+                <p class="small opacity">Accepted Formats: XLSX, CSV, TXT</p>
+              </label>
+            </div>
+          </div>
+          <div class="start__amount">
+            <h4 class="h4 start__heading">Amount of messages</h4>
+            <div>
+              <input type="number" class="input" id="referal-link" onkeyup="enforceMinMax(this)" value="0" min="0" max="10">
+              <p class="small opacity">Messages available: 10</p>
+            </div>
+          </div>
+          <div class="start__messages">
+            <h4 class="h4 start__heading">Message templates</h4>
+            <div id="templates">
+              <div class="template__el" id="template">
+                <textarea name="template" class="textarea message-template" onclick="setActiveOnClick(this)" placeholder="Hello, %username%, we have a unique offer for you!"></textarea>
+                <button class="button-text button template__remove" onclick="event.preventDefault();removeTemplate(this)">—</button>
+              </div>
+            </div>
+            <button type="button" id="add-template" class="button-text button">+</button>
+          </div>
+          <div class="start__dynamic">
+            <span class="opacity">Use Dynamic Data:</span>
+            <div class="start__dynamic-btns">
+              <!-- active -->
+              <button tabindex="2" type="button" class="button add-dynamic-data">User Name</button>
+              <button tabindex="3" type="button" class="button add-dynamic-data">Phone Number</button>
+              <button tabindex="4" type="button" class="button add-dynamic-data">Today Date</button>
+            </div>
+            <div class="start__dynamic-checkbox">
+              <input tabindex="5" type="checkbox" id="use-ai" name="use-ai" class="input" disabled> 
+              <label for="use-ai" class="small">Auto-ChatGPT Rewriting</label>
+            </div>
+          </div>
+          <button type="submit" tabindex="6" class="button button-primary start__submit button-text">Start</button>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer__inner">
+        <a href="#">
+          <span class="subheading logo">WhatsBulking</span>
+        </a>
+        <div class="footer__nav">
+          <ul>
+            <li class="smaller opacity"><a href="#">TERMS & CONDITIONS</a></li>
+            <li class="smaller opacity"><a href="#">Privacy Policy</a></li>
+            <li class="smaller opacity"><a href="#">COOKIES POLICY</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/script.js"></script>
+</body>
+</html>

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-weight: 400;
   font-family: Lato;
@@ -103,7 +104,7 @@ ul {
 }
 
 .h1 {
-  font-size: 60px;
+  font-size: 48px;
 }
 
 .h2 {
@@ -120,6 +121,10 @@ ul {
 
 .h5 {
   font-size: 16px;
+}
+
+.cap {
+  text-transform: capitalize;
 }
 
 .input, .textarea {
@@ -436,11 +441,174 @@ ul {
   }
 }
 
+/**************************\
+  Basic Modal Styles
+\**************************/
+.modal__overlay {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__container {
+  background-color: #fff;
+  padding: 30px;
+  max-width: 500px;
+  max-height: 100vh;
+  border-radius: 4px;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal__title {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #1E1E1E;
+  box-sizing: border-box;
+}
+
+.modal__close {
+  background: transparent;
+  border: 0;
+}
+
+.modal__header .modal__close:before {
+  content: "✕";
+}
+
+.modal__content {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.8);
+}
+.modal__content > .small {
+  margin-bottom: 40px;
+}
+.modal__content > .input {
+  width: 100%;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.modal footer {
+  padding-bottom: 40px;
+}
+
+.modal__btn {
+  font-size: 0.875rem;
+  padding: 20px 45px;
+  background-color: #e6e6e6;
+  color: rgba(0, 0, 0, 0.8);
+  border-radius: 7px;
+  border-style: none;
+  cursor: pointer;
+  -webkit-appearance: button;
+  text-transform: none;
+  overflow: visible;
+  line-height: 1.15;
+  margin: 0;
+  will-change: transform;
+  -moz-osx-font-smoothing: grayscale;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  transition: transform 0.25s ease-out;
+}
+.modal__btn.button.button-primary {
+  width: 100%;
+}
+
+.modal__btn-primary {
+  background-color: #00449e;
+  color: #fff;
+}
+
+/**************************\
+  Demo Animation Style
+\**************************/
+@keyframes mmfadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes mmfadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes mmslideIn {
+  from {
+    transform: translateY(15%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes mmslideOut {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-10%);
+  }
+}
+.micromodal-slide {
+  display: none;
+}
+
+.micromodal-slide.is-open {
+  display: block;
+}
+
+.micromodal-slide[aria-hidden=false] .modal__overlay {
+  animation: mmfadeIn 0.3s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.micromodal-slide[aria-hidden=false] .modal__container {
+  animation: mmslideIn 0.3s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.micromodal-slide[aria-hidden=true] .modal__overlay {
+  animation: mmfadeOut 0.3s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.micromodal-slide[aria-hidden=true] .modal__container {
+  animation: mmslideOut 0.3s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.micromodal-slide .modal__container,
+.micromodal-slide .modal__overlay {
+  will-change: transform;
+}
+
 body {
   background-color: #F8F9FE;
   background-image: url(../img/gradient.jpg);
   background-position: center bottom;
   background-repeat: no-repeat;
+}
+
+object {
+  pointer-events: none;
 }
 
 section {
@@ -473,14 +641,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Header */
-header {
+.nav__header {
   position: absolute;
   top: 92px;
   width: 100%;
-  z-index: 100;
+  z-index: 2;
 }
 @media (max-width: 1024px) {
-  header {
+  .nav__header {
     top: 64px;
   }
 }
@@ -631,6 +799,10 @@ header {
   flex-direction: column;
   gap: 40px;
   flex-basis: 52%;
+}
+.intro__text > p {
+  line-height: 2rem;
+  width: 90%;
 }
 @media (max-width: 1440px) {
   .intro__text {
@@ -1139,6 +1311,7 @@ header {
 
 .reviews__mark {
   display: flex;
+  margin-bottom: 10px;
 }
 
 .reviews__name {
@@ -1215,11 +1388,11 @@ header {
 }
 
 /* Footer */
-footer {
+.footer {
   padding-bottom: 120px;
   color: #FFFFFF;
 }
-footer a {
+.footer a {
   color: #FFFFFF;
 }
 

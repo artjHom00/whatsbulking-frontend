@@ -3,12 +3,17 @@
 @import './normalize';
 @import './text-styles';
 @import './ui';
+@import './modal';
 
 body {
   background-color: $cLightGray;
   background-image: url(../img/gradient.jpg);
   background-position: center bottom;
   background-repeat: no-repeat;
+}  
+
+object {
+  pointer-events: none; 
 }
 
 section {
@@ -39,11 +44,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Header */
-header {
+.nav__header {
   position: absolute;
   top: 92px;
   width: 100%;
-  z-index: 100;
+  z-index: 2;
 
   @media(max-width: 1024px) {
     top: 64px;
@@ -200,6 +205,10 @@ header {
   flex-direction: column;
   gap: 40px;
   flex-basis: 52%;
+  & > p {
+    line-height: 2rem;
+    width: 90%;
+  }
 
   @media(max-width: 1440px) {
     flex-basis: 70%;
@@ -714,6 +723,7 @@ header {
 
 .reviews__mark {
   display: flex;
+  margin-bottom: 10px;
 }
 
 .reviews__name {
@@ -796,7 +806,7 @@ header {
 }
 
 /* Footer */
-footer {
+.footer {
   padding-bottom: 120px;
   color: $cWhite;
 

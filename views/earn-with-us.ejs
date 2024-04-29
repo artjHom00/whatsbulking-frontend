@@ -5,28 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Earn with us</title>
 
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <header>
-    <div class="container">
-      <div class="header__inner">
-        <div class="header__logo">
-          <a href="#">
-            <span class="subheading logo">WhatsBulking</span>
-          </a>
-        </div>
-        <div class="header__icons">
-          <a href="#">
-            <object id="svg1" data="./img/icons/header/faq.svg" type="image/svg+xml"></object>
-          </a>
-          <button id="burger">
-            <object data="./img/icons/header/menu.svg" type="image/svg+xml"></object>
-          </button>
-        </div>
-      </div>
-    </div>
-  </header>
+  <%- include('./components/header.ejs') %>
 
   <div class="container page-container">
     <aside id="aside">
@@ -34,33 +16,33 @@
       <nav class="aside__menu">
         <ul>
           <li class="aside__menu-item">
-            <a href="./dashboard.html" aria-label="Home">
-              <object data="./img/icons/menu/home.svg" type="image/svg+xml"></object>
+            <a href="/demo/dashboard" aria-label="Home">
+              <object data="/img/icons/menu/home.svg" type="image/svg+xml"></object>
               <span>Home</span>
             </a>
           </li>
           <li class="aside__menu-item load not-load">
-            <a href="./campaigns.html" aria-label="Campaigns">
-              <object data="./img/icons/menu/campaigns.svg" type="image/svg+xml"></object>
+            <a href="/demo/campaigns" aria-label="Campaigns">
+              <object data="/img/icons/menu/campaigns.svg" type="image/svg+xml"></object>
               <span>Campaigns</span>
             </a>
           </li>
           <li class="aside__menu-item">
-            <a href="./support.html" aria-label="Support">
-              <object data="./img/icons/menu/support.svg" type="image/svg+xml"></object>
+            <a href="/demo/support" aria-label="Support">
+              <object data="/img/icons/menu/support.svg" type="image/svg+xml"></object>
 
               <span>Support</span>
             </a>
           </li>
           <li class="aside__menu-item">
-            <a href="./subscription.html" aria-label="Subscription">
-              <object data="./img/icons/menu/subscription.svg" type="image/svg+xml"></object>
+            <a href="/demo/subscription" aria-label="Subscription">
+              <object data="/img/icons/menu/subscription.svg" type="image/svg+xml"></object>
               <span>Subscription</span>
             </a>
           </li>
           <li class="aside__menu-item active">
-            <a href="./earn-with-us.html" aria-label="Earn with us">
-              <object data="./img/icons/menu/earn-with-us.svg" type="image/svg+xml"></object>
+            <a href="/demo/earn-with-us" aria-label="Earn with us">
+              <object data="/img/icons/menu/earn-with-us.svg" type="image/svg+xml"></object>
               <span>Earn with us</span>
             </a>
           </li>
@@ -82,7 +64,7 @@
                 <div>
                   <input type="text" class="input" readonly id="referal-link" value="whatsbulking.co/?r=smmaagency">
                   <button id="copy-btn">
-                    <object data="./img/icons/copy.svg" type="image/svg+xml"></object>
+                    <object data="/img/icons/copy.svg" type="image/svg+xml"></object>
                   </button>  
                 </div>
                 <span class="opacity">You will receive 10% commission for each client brought</span>
@@ -92,14 +74,62 @@
               <input type="text" class="input" tabindex="1" placeholder="USDT Receiving Address">
               <button type="submit" class="button button-primary button-text" tabindex="2">Save</button>
             </form>
-            <div class="earn__clients">
-              <h4 class="h4" class="earn__clients-title">Active clients</h4>
-            </div>
           </div>
           <div class="income">
-            <h2 class="h2 income__amount">$5,430.00</h2>
+            <h2 class="h2 income__amount">$164.5</h2>
             <p class="income__desc opacity">Will be transferred to your USDT address <br> At the end of this month</p>
           </div>
+        </div>
+        <div class="earn__clients">
+          <h4 class="h4 earn__clients-title">Active clients (5)</h4>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Unique Name</th>
+                <th scope="col">Since</th>
+                <th scope="col">Subscription Type</th>
+                <th scope="col">Earnings</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Danny B</td>
+                <td>13 Apr, 2024</td>
+                <td>Affiliate</td>
+                <td>$4.9 per month</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>sl3mo</td>
+                <td>25 Apr, 2024</td>
+                <td>Premium</td>
+                <td>$29.9 per month</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Emporium</td>
+                <td>27 Apr, 2024</td>
+                <td>Premium</td>
+                <td>$29.9 per month</td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td>Mino</td>
+                <td>30 Apr, 2024</td>
+                <td>Ultimate</td>
+                <td>$49.9 per month</td>
+              </tr>
+              <tr>
+                <th scope="row">5</th>
+                <td>leon</td>
+                <td>30 Apr, 2024</td>
+                <td>Ultimate</td>
+                <td>$49.9 per month</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </section>
     </main>
@@ -122,6 +152,6 @@
       </div>
     </div>
   </footer>
-  <script src="./js/script.js"></script>
+  <script src="/js/script.js"></script>
 </body>
 </html>
