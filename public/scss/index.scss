@@ -27,6 +27,19 @@ h1, h2, h3, h4, h5, h6 {
 .logo {
   font-weight: 800;
 }
+.intro__btn {
+  width: 75% !important;
+}
+.small-btn-text {
+  width: 75%;
+  text-align: center;
+  display: block;
+  margin-top: 10px;
+  @media(max-width: 1280px) {
+    margin: 0 auto;
+    margin-top: 5px;
+  }
+}
 
 .container {
   margin: 0 auto;
@@ -42,7 +55,6 @@ h1, h2, h3, h4, h5, h6 {
     max-width: none;
   }
 }
-
 /* Header */
 .nav__header {
   position: absolute;
@@ -194,6 +206,57 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 92px;
   z-index: 2;
 
+  & figure {
+    position: relative;
+    & > .notif-1 {
+      position: absolute;
+      top: 30px;
+      left: 20%;
+      animation: 3s 0s infinite alternate notification;
+    }
+    & > .notif-2 {
+      position: absolute;
+      bottom: 50%;
+      left: 0px;
+      animation: 2s 0.5s infinite alternate notification;
+
+    }
+    & > .notif-3 {
+      position: absolute;
+      bottom: 15%;
+      right: 0;
+      animation: 3s 2s infinite alternate notification;
+
+    }
+  }
+  @keyframes notification {
+    from {
+      transform: translateX(0);
+    }
+  
+    to {
+      transform: translateY(5px);
+    }
+  }
+  @keyframes notification-2 {
+    from {
+      bottom: 49%;
+    }
+  
+    to {
+      bottom: 50%;
+    }
+  }
+  @keyframes notification-3 {
+    from {
+      bottom: 16%;
+    }
+  
+    to {
+      bottom: 15%;
+    }
+  }
+
   @media(max-width: 1280px) {
     flex-direction: column;
     text-align: center;
@@ -313,6 +376,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .video__text {
+  max-width: 1020px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -357,6 +422,8 @@ h1, h2, h3, h4, h5, h6 {
   height: 500px;
   border-radius: 15px;
   background-color: $cText;
+  max-width: 1020px;
+  margin: 0 auto;
 
   @media(max-width: 1024px) {
     height: 400px;
@@ -413,7 +480,11 @@ h1, h2, h3, h4, h5, h6 {
   @media(max-width: 768px) {
     gap: 24px;
   }
-
+  & h3 {
+    & span {
+      color: $cPrimary;
+    }
+  }
   ul {
     display: flex;
     flex-direction: column;
@@ -458,11 +529,11 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Why WhatsApp */
 .why {
-  background: linear-gradient(90deg, rgba(63,80,139,1) 0%, rgba(87,96,128,1) 70%, rgba(79,86,120,1) 100%);
+  background: linear-gradient(90deg, rgb(51, 75, 161) 0%, rgb(73, 90, 152) 70%, rgba(79,86,120,1) 100%);
   
   color: $cWhite;
 
-  padding: 60px 0 80px;
+  padding: 60px 0;
   margin-bottom: 150px;
 }
 

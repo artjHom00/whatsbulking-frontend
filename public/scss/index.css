@@ -907,6 +907,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .video__text {
+  max-width: 1020px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -950,6 +952,8 @@ h1, h2, h3, h4, h5, h6 {
   height: 500px;
   border-radius: 15px;
   background-color: #1E1E1E;
+  max-width: 1020px;
+  margin: 0 auto;
 }
 @media (max-width: 1024px) {
   .video__video {
