@@ -473,6 +473,17 @@ ul {
   align-items: center;
 }
 
+.welive {
+  background: #0d760d;
+  color: white;
+  padding: 7px;
+  margin-top: 15px;
+  border-radius: 7px;
+  font-size: 11px;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
 .modal__title {
   margin-top: 0;
   margin-bottom: 0;
@@ -490,8 +501,8 @@ ul {
 }
 
 .modal__content {
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   line-height: 1.5;
   color: rgba(0, 0, 0, 0.8);
 }

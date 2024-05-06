@@ -33,14 +33,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // console.log('🚀 ~ e.target.controller().info("scrollDirection"):', e.target.controller().info("scrollDirection"))
   })
   .on("enter leave", function (e) {
-    console.log(e.type == "enter" ? "inside" : "outside");
     if(e.type == "enter") {
       targetEl.style.maxWidth = "initial"
       console.log("🚀 ~ targetEl.style.maxWidth:", targetEl.style.maxWidth)
     }
   })
   .on("start end", function (e) {
-    console.log(e.type == "start" ? "top" : "bottom");
   })
   .on("progress", function (e) {
     let progressToFour = 4-(e.progress*4).toFixed(3)
@@ -52,6 +50,32 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   MicroModal.init();
+
+  const cookieBox = document.querySelector(".wrapper"),
+  buttons = document.querySelectorAll(".button");
+
+const executeCodes = () => {
+  //if cookie contains codinglab it will be returned and below of this code will not run
+  if (document.cookie.includes("true")) return;
+  cookieBox.classList.add("show");
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      cookieBox.classList.remove("show");
+
+      //if button has acceptBtn id
+      if (button.id == "acceptBtn") {
+        //set cookies for 1 month. 60 = 1 min, 60 = 1 hours, 24 = 1 day, 30 = 30 days
+        document.cookie = "cookieBy= true; max-age=" + 60 * 60 * 24 * 30;
+      }
+    });
+  });
+};
+
+//executeCodes function will be called on webpage load
+window.addEventListener("load", () => {
+  setTimeout(executeCodes, 6500)
+});
 
 })
 

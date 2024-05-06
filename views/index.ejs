@@ -10,6 +10,8 @@
   
 </head>
 <body>
+  <%- include('./components/cookies-popup.ejs') %>
+  <%- include('./components/offer.ejs') %>
   <header class="nav__header">
     <div class="container">
       <div class="header__inner">
@@ -20,9 +22,10 @@
         </div>
         <nav id="navigation" data-scroll-reveal>
           <ul class="header__navigation">
-            <li class="subheading-18"><a href="#">Features</a></li>
-            <li class="subheading-18"><a href="#">Reviews</a></li>
-            <li class="subheading-18"><a href="#">Pricings</a></li>
+            <li class="subheading-18"><a href="#features">Features</a></li>
+            <li class="subheading-18"><a href="#pricings">Pricings</a></li>
+            <li class="subheading-18"><a href="#reviews">Reviews</a></li>
+            <li class="subheading-18"><a href="#contact-us">Contact Us</a></li>
           </ul>
           <button class="button-primary button button-text header__btn" data-micromodal-trigger="modal-1" data-scroll-reveal>Get Started</button>
         </nav>
@@ -41,7 +44,7 @@
           <div class="intro__intro">
             <div class="intro__text" data-scroll-reveal>
               <h1 class="intro__title h1">
-                Get more sales by sending <span><b style="font-size:62px;">thousands of messages</b></span> on WhatsApp
+                Get more sales by cold-messaging <span><b style="font-size:62px;">thousands of users</b></span> on WhatsApp
               </h1>
               <!-- <p class="subheading opacity">Sell anything online on WhatsApp </p> -->
               <p class="subheading-18 opacity">Send your offers, promotions, service and information messages in the most popular WhatsApp messenger without adding phone numbers to your contacts!</p>
@@ -52,10 +55,10 @@
               </div>
             </div>
             <figure data-scroll-reveal>
-              <img src="./img/intro-img.svg" alt="intro">
-              <img src="./img/notifications/notif-1.svg" class="notif-1" alt="intro">
-              <img src="./img/notifications/notif-2.svg" class="notif-2" alt="intro">
-              <img src="./img/notifications/notif-3.svg" class="notif-3" alt="intro">
+              <object data="./img/intro-img.svg" alt="intro" type="image/svg+xml"></object>
+              <object data="./img/notifications/notif-1.svg" class="notif-1" alt="intro" type="image/svg+xml"></object>
+              <object data="./img/notifications/notif-2.svg" class="notif-2" alt="intro" type="image/svg+xml"></object>
+              <object data="./img/notifications/notif-3.svg" class="notif-3" alt="intro" type="image/svg+xml"></object>
             </figure>
           </div>
         </div>
@@ -67,10 +70,10 @@
       <div class="container" id="target">
         <div class="video__inner">
           <div class="video__text" data-scroll-reveal>
-            <h3 class="h3 video__title">We use unique technology to send messages <i>to non-contact numbers</i>. <br> Watch a video on how it works!</h3>
+            <h3 class="h3 video__title">We use unique technology to send messages <i>to non-contact numbers</i>. <br> Watch a video on how to get started with us!</h3>
             <p class="opacity video__desc">We provide you with an online presentation with predictions of our marketing campaigns & free consultation in Zoom</p>
           </div>
-          <video class="video__video" data-scroll-reveal></video>
+          <video  src="/video/video.mp4" class="video__video" data-scroll-reveal loop autoplay muted></video>
         </div>
       </div>
     </section>
@@ -101,7 +104,7 @@
     <section>
       <div class="container">
         <div class="features__inner">
-          <h3 class="h3 features__title" data-scroll-reveal>Our Features</h3>
+          <h3 class="h3 features__title" data-scroll-reveal id="features">Our Features</h3>
           <div class="features__features">
             <div class="features__feature" data-scroll-reveal>
               <object data="./img/features/icons/1.svg" type="image/svg+xml"></object>
@@ -138,8 +141,8 @@
                 <p class="opacity">We provide you your own customised dashboard on a dedicated domain with your logo & Full access to marketing campaign statistics</p>
               </div>
               <picture>
-                <source media="(max-width: 768px)" srcset="./img/features/responsive.png">
-                <object data="./img/features/image.svg" type="image/svg+xml" style="max-width: 100% !important"></object>
+                <object  class="features__resp" data="./img/features/image.svg" type="image/svg+xml" style="max-width: 100% !important"></object>
+                <object class="features__resp-m" data="./img/features/responsive-image.svg" type="image/svg+xml" style="max-width: 100% !important"></object>
               </picture>
             </div>
           </div>
@@ -147,14 +150,14 @@
             <h2 class="h2 features__demo-title" data-scroll-reveal>
               Yet not sure? <br> <i>Request a Presentation right now!</i>
             </h2>
-            <a href="#" class="button button-text button-primary features__demo-btn" data-scroll-reveal>⚡️ Request a Presentation</a>
+            <a href="#" class="button button-text button-primary features__demo-btn" data-scroll-reveal data-micromodal-trigger="modal-1">⚡️ Request a Presentation</a>
             <div class="features__people" data-scroll-reveal>
               <div class="people-block">
                 <img src="./img/features/people/1.png" alt="man">
                 <img src="./img/features/people/2.png" alt="man">
                 <img src="./img/features/people/3.png" alt="man">
               </div>
-              <span class="small">400+ people have tried it</span>
+              <span class="small">400+ people have already tried it</span>
             </div>
             <p class="small opacity features__demo-desc">Leave your request here, we will contact with you shortly & consult you </p>
           </div>
@@ -164,30 +167,30 @@
 
     <section>
       <div class="container">
-        <div class="engage__headline" data-scroll-reveal>
-          <p class="opacity small">ONE OF THE FIRST WHATSAPP MARKETING SERVICES ON THE MARKET ONLINE</p>
+        <div class="engage__headline" data-scroll-reveal id="pricings">
+          <p class="opacity small">FIRST WHATSAPP MARKETING SERVICES ON THE MARKET ONLINE</p>
           <h2 class="h2">We provide the full service for <br><small style="position: relative; top: -10px;">marketing campaigns in WhatsApp</small></h2>
         </div>
         <div class="engage__inner">
           <div class="engage__content">
-            <h3 class="h3" data-scroll-reveal>We'll contact you back with all available packages in <span>5 minutes</span>!</h3>
+            <h3 class="h3" data-scroll-reveal>We'll contact you back with all available packages in <span>30 minutes</span>!</h3>
             <h4 class="h4" data-scroll-reveal>Leave your request and get:</h4>
             <ul data-scroll-reveal>
-              <li class="button-text">A free consultation and your expected leads & conversions boost</li>
-              <li class="button-text">Your personal support manager, available 24/7</li>
-              <li class="button-text">Demo version of your dashboard, where you can see all statistics</li>
+              <li class="button-text">A free consultation and your expected leads & conversions boost from working with us</li>
+              <li class="button-text">Your personal support manager, available 24/7 via any preferable method</li>
+              <li class="button-text">Demo version of your dashboard, where you can see all statistics, regarding our marketing campaign</li>
               <!-- <li class="button-text">Businessess use our service to replace cold messaging employees and automate the process of reaching their clients. It's more effective & cheaper</li>
               <li class="button-text">Agencies use our service to sell their products or services directly in WhatsApp and seamlessly reach thousands of clients</li> -->
-            <a data-scroll-reveal href="#" class="button-text button button-primary">Get started!</a>
+            <a data-scroll-reveal href="#" data-micromodal-trigger="modal-1" class="button-text button button-primary">Get started</a>
           </div>
           <figure data-scroll-reveal>
-            <img src="/img/engage/macbook.svg" data-scroll-reveal alt="img">
+            <object data="/img/engage/macbook.svg" type="image/svg+xml" data-scroll-reveal alt="img"></object>
           </figure>
         </div>
       </div>
     </section>
 
-    <section class="why">
+    <section class="why" id="reviews">
       <div class="container">
         <!-- <h3 class="h3 why__title" data-scroll-reveal>WhatsApp Bulking</h3> -->
         <div class="why__reasons">
@@ -222,7 +225,7 @@
       </div>
     </section>
 
-    <section>
+    <section id="contact-us">
       <div class="container">
         <h3 class="h3 reviews__title" data-scroll-reveal>What Our Customers Say About Us</h3>
         <div class="reviews__inner">
@@ -292,9 +295,10 @@
           </a>
         </div>
         <ul class="footer__nav">
-          <li class="smaller opacity"><a href="#">TERMS & CONDITIONS</a></li>
-          <li class="smaller opacity"><a href="#">PRIVACY POLICY</a></li>
-          <li class="smaller opacity"><a href="#">COOKIES POLICY</a></li>
+          <li class="smaller opacity"><a href="termsconditions.txt" target="_blank">TERMS & CONDITIONS</a></li>
+          <li class="smaller opacity"><a href="liability.txt" target="_blank">EXCLUSION OF LIABILITY</a></li>
+          <li class="smaller opacity"><a href="cookiespolicy.txt" target="_blank">COOKIES POLICY</a></li>
+          <li class="smaller opacity">Business Inquiries: admin@whatsbulking.com</li>
         </ul>
       </div>
     </div>

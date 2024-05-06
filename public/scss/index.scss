@@ -4,6 +4,10 @@
 @import './text-styles';
 @import './ui';
 @import './modal';
+@import './cookies';
+@import './offer';
+
+html { scroll-behavior: smooth; }
 
 body {
   background-color: $cLightGray;
@@ -18,6 +22,9 @@ object {
 
 section {
   padding-bottom: 150px;
+  @media(max-width: 1280px) {
+    padding-bottom: 70px;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -169,6 +176,7 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 196px;
   position: relative;
   overflow: hidden;
+  z-index: 1;
 
   background: url(../img/intro-background.jpg);
   background-color: $cLightGray;
@@ -206,10 +214,18 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 92px;
   z-index: 2;
 
+  @media(max-width: 1280px) {
+    margin-bottom: 20px;
+  }
+
   & figure {
     position: relative;
+    & > object {
+      width: 100%;
+    }
     & > .notif-1 {
       position: absolute;
+      width: 60%;
       top: 30px;
       left: 20%;
       animation: 3s 0s infinite alternate notification;
@@ -217,6 +233,7 @@ h1, h2, h3, h4, h5, h6 {
     & > .notif-2 {
       position: absolute;
       bottom: 50%;
+      width: 60%;
       left: 0px;
       animation: 2s 0.5s infinite alternate notification;
 
@@ -224,6 +241,7 @@ h1, h2, h3, h4, h5, h6 {
     & > .notif-3 {
       position: absolute;
       bottom: 15%;
+      width: 60%;
       right: 0;
       animation: 3s 2s infinite alternate notification;
 
@@ -376,7 +394,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .video__text {
-  max-width: 1020px;
+  max-width: 890px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -421,16 +439,19 @@ h1, h2, h3, h4, h5, h6 {
 .video__video {
   height: 500px;
   border-radius: 15px;
-  background-color: $cText;
-  max-width: 1020px;
+  // background-color: $cText;
+  max-width: 890px;
   margin: 0 auto;
+  width:100%;
 
   @media(max-width: 1024px) {
     height: 400px;
+    max-width: 728px;
   }
 
   @media(max-width: 768px) {
     height: 250px;
+    max-width: 455px;
   }
 }
 
@@ -461,7 +482,9 @@ h1, h2, h3, h4, h5, h6 {
   @media(max-width: 1024px) {
     flex-direction: column-reverse;
   }
-
+  & object {
+    width: 100%;
+  }
   >figure {
     flex-basis: 48%
   }
@@ -659,7 +682,18 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
     gap: 10px;
   }
-
+.features__resp {
+  display: block;
+  &-m {
+    display: none;
+  }
+  @media(max-width: 1280px) {
+    display: none;
+    &-m {
+      display: block;
+    }
+  }
+}
   @media(max-width: 1440px) {
     align-items: center
   }
@@ -927,8 +961,7 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
     gap: 24px;
   }
-}
-
+} 
 
 
 @keyframes bgshake {
