@@ -3,9 +3,12 @@
     position: fixed;
     top: 0;
     width: 100%;
-    z-index:3030000300;
+    z-index:5;
     text-align: center;
     color: $cWhite;
     padding: 10px 0;
     font-weight: 500;
+    @media(max-width: 768px) {
+        font-size: 12px;
+    }
 }

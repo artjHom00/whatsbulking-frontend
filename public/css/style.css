@@ -446,7 +446,7 @@ ul {
 \**************************/
 .modal__overlay {
   position: fixed;
-  z-index: 2;
+  z-index: 5;
   top: 0;
   left: 0;
   right: 0;
@@ -509,14 +509,10 @@ ul {
 .modal__content > .small {
   margin-bottom: 40px;
 }
-.modal__content > .input {
+.modal__content > form > .input {
   width: 100%;
   margin-top: 10px;
   font-size: 14px;
-}
-
-.modal footer {
-  padding-bottom: 40px;
 }
 
 .modal__btn {
@@ -609,6 +605,19 @@ ul {
 .micromodal-slide .modal__container,
 .micromodal-slide .modal__overlay {
   will-change: transform;
+}
+
+#result-message {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+}
+#result-message .resp-received {
+  color: #0d760d;
+  font-weight: bold;
+}
+#result-message .resp-failed {
+  color: rgb(255, 84, 84);
 }
 
 object {

@@ -54,28 +54,51 @@ document.addEventListener('DOMContentLoaded', () => {
   const cookieBox = document.querySelector(".wrapper"),
   buttons = document.querySelectorAll(".button");
 
-const executeCodes = () => {
-  //if cookie contains codinglab it will be returned and below of this code will not run
-  if (document.cookie.includes("true")) return;
-  cookieBox.classList.add("show");
+  const executeCodes = () => {
+    //if cookie contains codinglab it will be returned and below of this code will not run
+    if (document.cookie.includes("true")) return;
+    cookieBox.classList.add("show");
 
-  buttons.forEach((button) => {
-    button.addEventListener("click", () => {
-      cookieBox.classList.remove("show");
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        cookieBox.classList.remove("show");
 
-      //if button has acceptBtn id
-      if (button.id == "acceptBtn") {
-        //set cookies for 1 month. 60 = 1 min, 60 = 1 hours, 24 = 1 day, 30 = 30 days
-        document.cookie = "cookieBy= true; max-age=" + 60 * 60 * 24 * 30;
-      }
+        //if button has acceptBtn id
+        if (button.id == "acceptBtn") {
+          //set cookies for 1 month. 60 = 1 min, 60 = 1 hours, 24 = 1 day, 30 = 30 days
+          document.cookie = "cookieBy= true; max-age=" + 60 * 60 * 24 * 30;
+        }
+      });
     });
-  });
-};
+  };
 
-//executeCodes function will be called on webpage load
-window.addEventListener("load", () => {
-  setTimeout(executeCodes, 6500)
-});
+  //executeCodes function will be called on webpage load
+  window.addEventListener("load", () => {
+    setTimeout(executeCodes, 6500)
+  });
+
+  $('#modal-submit').on('click', (e) => {
+    e.preventDefault()
+
+    $.post('/send', {
+      name: $('#name').val(),
+      email: $('#email').val(),
+      phone: $('#phone').val(),
+      comment: $('#comment').val(),
+  }).then((res) => {
+      console.log(res)
+      $('#result-message').html('<div class="resp-received">We received your request! <br> Await response in 5 minutes via WhatsApp / Email</div>')
+      setTimeout(() => {
+        $('#result-message').html(' ')
+      }, 10000)
+  }).catch((err) => {
+      console.log(err.responseJSON.error)
+      $('#result-message').html('<div class="resp-failed">Error occured while sending a request</div>')
+      setTimeout(() => {
+        $('#result-message').html(' ')
+      }, 10000)
+  })
+  })
 
 })
 

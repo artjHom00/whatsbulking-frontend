@@ -14,14 +14,19 @@
           <span class="small opacity">Send your request and <b>get a free 30-minute presentation</b> with expected conversions & leads boost from our marketing campaigns made <b>special for you!</b></span>
         </small>
         <br>
-        <input type="text" class="input" placeholder="Your Name..." style="margin-top: 30px;">
-        <input type="text" class="input" placeholder="Your Email...">
-        <input type="text" class="input" placeholder="Your Contact Number...">
-        <textarea type="text" class="input" placeholder="Comment..." style="height: 150px;resize: none;"></textarea>
-      </main>
-      <footer class="modal__footer">
-        <button class="modal__btn button button-primary ">Continue</button>
-      </footer>
+        <form action="#">
+          <input type="text" class="input" placeholder="Your Name... *" name="name" id="name" style="margin-top: 30px;" required>
+          <input type="text" class="input" placeholder="Your Email... *" name="email" id="email" required>
+          <input type="text" class="input" placeholder="Your Contact Number... *" name="phone" id="phone" required>
+          <textarea type="text" class="input" placeholder="Comment..." name="comment" id="comment" style="height: 150px;resize: none;"></textarea>
+          <footer class="modal__footer">
+            <button class="modal__btn button button-primary" id="modal-submit" type="submit">Continue</button>
+            <div id="result-message">
+              
+            </div>
+          </footer>
+        </form>
+        </main>
     </div>
   </div>
 </div>

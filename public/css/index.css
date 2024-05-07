@@ -446,7 +446,7 @@ ul {
 \**************************/
 .modal__overlay {
   position: fixed;
-  z-index: 2;
+  z-index: 5;
   top: 0;
   left: 0;
   right: 0;
@@ -509,14 +509,10 @@ ul {
 .modal__content > .small {
   margin-bottom: 40px;
 }
-.modal__content > .input {
+.modal__content > form > .input {
   width: 100%;
   margin-top: 10px;
   font-size: 14px;
-}
-
-.modal footer {
-  padding-bottom: 40px;
 }
 
 .modal__btn {
@@ -611,6 +607,19 @@ ul {
   will-change: transform;
 }
 
+#result-message {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+}
+#result-message .resp-received {
+  color: #0d760d;
+  font-weight: bold;
+}
+#result-message .resp-failed {
+  color: rgb(255, 84, 84);
+}
+
 .wrapper {
   position: fixed;
   bottom: 50px;
@@ -702,11 +711,16 @@ header h2 {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 3030000300;
+  z-index: 5;
   text-align: center;
   color: #FFFFFF;
   padding: 10px 0;
   font-weight: 500;
+}
+@media (max-width: 768px) {
+  .offer {
+    font-size: 12px;
+  }
 }
 
 html {
@@ -780,7 +794,7 @@ h1, h2, h3, h4, h5, h6 {
   position: absolute;
   top: 92px;
   width: 100%;
-  z-index: 2;
+  z-index: 3;
 }
 @media (max-width: 1024px) {
   .nav__header {
