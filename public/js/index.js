@@ -78,26 +78,68 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   $('#modal-submit').on('click', (e) => {
+    function ValidateEmail(input) {
+
+      var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    
+      if (input.value.match(validRegex)) {
+    
+        return true;
+    
+      } else {
+
+        return false;
+    
+      }
+    
+    }
     e.preventDefault()
 
-    $.post('/send', {
-      name: $('#name').val(),
-      email: $('#email').val(),
-      phone: $('#phone').val(),
-      comment: $('#comment').val(),
-  }).then((res) => {
-      console.log(res)
-      $('#result-message').html('<div class="resp-received">We received your request! <br> Await response in 5 minutes via WhatsApp / Email</div>')
+
+    if(!$('#name').val()) {
+      $('#result-message').html('<div class="resp-failed">Name is not filled</div>')
       setTimeout(() => {
         $('#result-message').html(' ')
       }, 10000)
-  }).catch((err) => {
-      console.log(err.responseJSON.error)
-      $('#result-message').html('<div class="resp-failed">Error occured while sending a request</div>')
+      return
+    }
+
+
+    if(!ValidateEmail(email)) {
+      $('#result-message').html('<div class="resp-failed">The Email is not correct</div>')
       setTimeout(() => {
         $('#result-message').html(' ')
       }, 10000)
-  })
+      return
+    }
+    
+    if(!$('#phone').val()) {
+      $('#result-message').html('<div class="resp-failed">Phone is not filled</div>')
+      setTimeout(() => {
+        $('#result-message').html(' ')
+      }, 10000)
+      return
+    }
+
+      $.post('/send', {
+        name: $('#name').val(),
+        email: $('#email').val(),
+        phone: $('#phone').val(),
+        comment: $('#comment').val(),
+      }).then((res) => {
+          console.log(res)
+          $('#result-message').html('<div class="resp-received">We received your request! <br> Await response in 5 minutes via WhatsApp / Email</div>')
+          setTimeout(() => {
+            $('#result-message').html(' ')
+          }, 10000)
+      }).catch((err) => {
+          console.log(err.responseJSON.error)
+          $('#result-message').html('<div class="resp-failed">Error occured while sending a request</div>')
+          setTimeout(() => {
+            $('#result-message').html(' ')
+          }, 10000)
+      })
+
   })
 
 })
