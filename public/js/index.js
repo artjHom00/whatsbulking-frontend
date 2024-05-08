@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Navigation Responsive
   const burger = document.getElementById('burger')
   const navigation = document.getElementById('navigation')
+  let timeout = null;
+  let metaInfo = null;
 
   burger.addEventListener('click', () => {
     burger.classList.toggle('active')
@@ -51,6 +53,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   MicroModal.init();
 
+  const input = document.querySelector("#phone");
+  const iti = window.intlTelInput(input, {
+    utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@22.0.2/build/js/utils.js",
+    autoPlaceholder: "aggressive",
+    initialCountry: "auto",
+    separateDialCode: true,
+    strictMode: true,
+    geoIpLookup: function(success, failure) {
+    fetch("https://ipapi.co/json")
+      .then(function(res) { return res.json(); })
+      .then(function(data) { if(data.city) { metaInfo = `${data.country_name} ${data.city}`; } success(data.country_code); })
+      .catch(function() { failure(); });
+
+  }
+  });
+
   const cookieBox = document.querySelector(".wrapper"),
   buttons = document.querySelectorAll(".button");
 
@@ -95,10 +113,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     e.preventDefault()
 
-
     if(!$('#name').val()) {
       $('#result-message').html('<div class="resp-failed">Name is not filled</div>')
-      setTimeout(() => {
+      if(timeout) {
+        clearTimeout(timeout); //cancel the previous timer.
+        timeout = null;
+      }
+      timeout = setTimeout(() => {
         $('#result-message').html(' ')
       }, 10000)
       return
@@ -107,7 +128,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if(!ValidateEmail(email)) {
       $('#result-message').html('<div class="resp-failed">The Email is not correct</div>')
-      setTimeout(() => {
+      if(timeout) {
+        clearTimeout(timeout); //cancel the previous timer.
+        timeout = null;
+      }
+      timeout = setTimeout(() => {
         $('#result-message').html(' ')
       }, 10000)
       return
@@ -115,7 +140,11 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if(!$('#phone').val()) {
       $('#result-message').html('<div class="resp-failed">Phone is not filled</div>')
-      setTimeout(() => {
+      if(timeout) {
+        clearTimeout(timeout); //cancel the previous timer.
+        timeout = null;
+      }
+      timeout = setTimeout(() => {
         $('#result-message').html(' ')
       }, 10000)
       return
@@ -124,18 +153,37 @@ document.addEventListener('DOMContentLoaded', () => {
       $.post('/send', {
         name: $('#name').val(),
         email: $('#email').val(),
-        phone: $('#phone').val(),
+        phone: iti.getNumber(intlTelInput.utils.numberFormat.E164),
+        metaInfo,
         comment: $('#comment').val(),
       }).then((res) => {
           console.log(res)
           $('#result-message').html('<div class="resp-received">We received your request! <br> Await response in 5 minutes via WhatsApp / Email</div>')
-          setTimeout(() => {
+          if(timeout) {
+            clearTimeout(timeout); //cancel the previous timer.
+            timeout = null;
+          }
+
+          $('#name').val('')
+          $('#email').val('')
+          $('#phone').val('')
+          $('#comment').val('')
+          $('#modal-submit').attr('disabled', true)
+          timeout = setTimeout(() => {
             $('#result-message').html(' ')
+
+            $('#modal-submit').removeAttr('disabled')
           }, 10000)
+
+
       }).catch((err) => {
           console.log(err.responseJSON.error)
           $('#result-message').html('<div class="resp-failed">Error occured while sending a request</div>')
-          setTimeout(() => {
+          if(timeout) {
+            clearTimeout(timeout); //cancel the previous timer.
+        timeout = null;
+          }
+          timeout = setTimeout(() => {
             $('#result-message').html(' ')
           }, 10000)
       })

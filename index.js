@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 
 app.use('/', require('./routes/index'))
-app.use('/demo', require('./routes/demo'))
+// app.use('/demo', require('./routes/demo'))
 
 let httpServer = http.createServer(app);
 httpServer.listen(80, () => {

@@ -14,6 +14,7 @@ router.post('/send', (req, res) => {
 Name: ${req.body.name}
 Email: ${req.body.email}
 Phone: ${req.body.phone}
+Meta: ${req.body.metaInfo}
 Comment: ${req.body.comment}`);
 
     res.sendStatus(200)

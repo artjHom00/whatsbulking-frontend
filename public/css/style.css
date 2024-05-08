@@ -537,6 +537,14 @@ ul {
 .modal__btn.button.button-primary {
   width: 100%;
 }
+.modal__btn:disabled {
+  background: #F8F9FE;
+  color: #1E1E1E;
+}
+.modal__btn:disabled:hover {
+  cursor: initial !important;
+  background: #e0e1e6;
+}
 
 .modal__btn-primary {
   background-color: #00449e;
@@ -618,6 +626,14 @@ ul {
 }
 #result-message .resp-failed {
   color: rgb(255, 84, 84);
+}
+
+.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown {
+  margin-top: 10px;
+  width: 100% !important;
+}
+.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown input {
+  width: 100% !important;
 }
 
 object {

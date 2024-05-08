@@ -101,6 +101,14 @@
   &.button.button-primary {
     width: 100%;
   }
+  &:disabled {
+    background: $cLightGray;
+    color: $cText;
+    &:hover {
+      cursor: initial !important;
+      background: #e0e1e6;
+    }
+  }
 }
 
 .modal__btn-primary {
@@ -172,5 +180,13 @@
   }
   .resp-failed {
     color: rgb(255, 84, 84);
+  }
+}
+
+.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown {
+  margin-top: 10px;
+  width: 100% !important;
+  & input {
+    width: 100% !important;
   }
 }
