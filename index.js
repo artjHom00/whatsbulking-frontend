@@ -12,6 +12,13 @@ app.use(express.json())
 app.use(bodyParser.urlencoded({ extended: false }));
 
 
+app.use(function(request, response, next) {
+  if (process.env.DEV === 'false' && !request.secure) {
+    return response.redirect("https://" + request.headers.host + request.url);
+  }
+  next()
+})
+
 app.use('/', require('./routes/index'))
 // app.use('/demo', require('./routes/demo'))
 
