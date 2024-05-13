@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /termsconditions.txt
+Disallow: /liability.txt
+Disallow: /cookiespolicy.txt

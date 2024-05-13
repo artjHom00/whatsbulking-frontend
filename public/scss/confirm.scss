@@ -1,0 +1,79 @@
+@import './fonts';
+@import './variables';
+@import './normalize';
+@import './text-styles';
+@import './ui';
+@import './modal';
+@import './cookies';
+@import './index';
+
+body {
+    background-image: none;
+}
+
+.intro {
+    &-heading {
+        margin-top: 30px;
+    }
+}
+.countdown {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    &-block {
+        margin: 0 40px;
+        &:first-child {
+            margin: 0;
+        }
+        &:last-child {
+            margin: 0;
+        }
+    }
+    &--val {
+        font-size: 72px;
+        font-weight: 800;
+    }
+}
+
+.info {
+    width: 100%;
+    max-width: 672px;
+    margin-top: 100px;
+    background: #FFFFFF;
+    padding: 40px 60px;
+    z-index: 300;
+    position: relative;
+    border-radius: 15px;
+    & > form {
+        display: block;
+        & > input {
+            display: block;
+            width: 100%;
+            margin: 20px 0;
+        }
+        & > button {
+            margin-top: 40px;
+            width: 100%;
+            padding: 20px 0;
+        }
+        & > p {
+            margin-top: 20px;
+        }
+    }
+}
+
+.dynamic-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  
+    input {
+      width: 20px;
+      height: 20px;
+    }
+  
+    label {
+      font-weight: 500;
+      opacity: 0.75;
+    }
+  }

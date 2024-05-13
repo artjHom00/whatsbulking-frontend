@@ -20,6 +20,13 @@ router.get('/', (req, res) => {
     res.render('index')
 })
 
+router.get('/confirm', (req, res) => {
+    res.render('confirm')
+})
+router.get('/success', (req, res) => {
+    res.render('success')
+})
+
 router.post('/send', (req, res) => {
 
     bot.sendMessage(process.env.CHAT_ID, `📌 New form request!

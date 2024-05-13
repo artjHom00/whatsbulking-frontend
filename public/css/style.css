@@ -127,6 +127,10 @@ ul {
   text-transform: capitalize;
 }
 
+.center {
+  text-align: center;
+}
+
 .input, .textarea {
   border: 2px solid #F8F9FE;
   padding: 16px 20px;
