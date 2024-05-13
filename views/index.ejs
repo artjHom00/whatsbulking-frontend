@@ -63,29 +63,7 @@
 <body>
   <%- include('./components/cookies-popup.ejs') %>
   <%- include('./components/offer.ejs') %>
-  <header class="nav__header">
-    <div class="container">
-      <div class="header__inner">
-        <div class="logo" data-scroll-reveal>
-          <a href="#">
-            <span class="subheading logo">WhatsBulking</span>
-          </a>
-        </div>
-        <nav id="navigation" data-scroll-reveal>
-          <ul class="header__navigation">
-            <li class="subheading-18"><a href="#features">Features</a></li>
-            <li class="subheading-18"><a href="#pricings">Pricings</a></li>
-            <li class="subheading-18"><a href="#reviews">Reviews</a></li>
-            <li class="subheading-18"><a href="#contact-us">Contact Us</a></li>
-          </ul>
-          <button class="button-primary button button-text header__btn" data-micromodal-trigger="modal-1" data-scroll-reveal>Get Started</button>
-        </nav>
-        <div class="burger" id="burger">
-          <span></span>
-        </div>
-      </div>
-    </div>
-  </header>
+  <%- include('./components/header.ejs') %>
 
   <main>
     <section class="intro">
