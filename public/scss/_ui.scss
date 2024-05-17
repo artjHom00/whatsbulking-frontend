@@ -8,6 +8,9 @@
   &:focus {
     border-color: $cPrimary;
   }
+  &:disabled {
+    background: $cLightGray;
+  }
 }
 
 .button {

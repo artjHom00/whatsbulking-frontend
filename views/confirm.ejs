@@ -67,20 +67,20 @@
 
   <main>
 
-    <section class="intro">
+    <section class="intro container">
       <img class="intro__pattern" src="./img/background-pattern.png">
       <h3 class="intro-heading center h3">🎉&nbsp; You’ll receive a Zoom Meeting link in:</h3>
       <div class="countdown center">
         <div class="countdown-block">
-          <div class="countdown--val h1">00</div>
+          <div class="countdown--val h1" id="hours">00</div>
           <div class="subheading-18">HOURS</div>
         </div>
         <div class="countdown-block">
-          <div class="countdown--val h1">00</div>
+          <div class="countdown--val h1" id="minutes">00</div>
           <div class="subheading-18">MINUTES</div>
         </div>
         <div class="countdown-block">
-          <div class="countdown--val h1">00</div>
+          <div class="countdown--val h1" id="seconds">00</div>
           <div class="subheading-18">SECONDS</div>
         </div>
       </div>
@@ -90,15 +90,14 @@
         <h3 class="h3">Let us know you a little better...</h3>
         <p class="subheading-16">We’re almost done! Just let us know more about you and in 15 minutes you’ll get an invitation to the meeting with us. We’ll show you a presentation with expected conversion boost from our marketing</p>
         <form action="">
-          <input type="text" class="input" placeholder="Your Company Name*">
-          <input type="text" class="input" placeholder="Website*">
+          <input type="text" id="company-name" class="input" placeholder="Your Company Name*">
+          <input type="text" id="website" class="input" placeholder="Website*">
           <div class="dynamic-checkbox">
-            <input tabindex="5" type="checkbox" id="use-ai" name="use-ai" class="input"> 
-            <label for="use-ai" class="subheading-16">I don’t have a website</label>
+            <input tabindex="5" type="checkbox" id="no-website" name="no-website" class="input"> 
+            <label for="no-website" class="subheading-16">I don’t have a website</label>
           </div>
-          <input type="text" class="input" placeholder="Company Size">
-          <input type="text" class="input" placeholder="Approximate amount of messages per month">
-          <button class="button button-primary button-text">Confirm</button>
+          <input type="number" class="input" id="amount" placeholder="Approximate amount of messages per month">
+          <button class="button button-primary button-text" id="submit">Confirm</button>
           <p class="center small opacity">By sending a request you agree with our <a href="/termsconditions.txt" style="text-decoration: underline;" target="_blank">terms & conditions</a></p>
         </form>
       </div>
@@ -126,10 +125,10 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
-  <script src="https://unpkg.com/scrollreveal"></script>
   <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-  <script src="/js/index.js"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="/js/countdown.min.js"></script>
+  <script src="/js/confirm.js"></script>
   <%- include('components/modal') %>
 </body>
 </html>

@@ -1,99 +1,22 @@
-document.addEventListener('DOMContentLoaded', () => {
-  // Navigation Responsive
-  const burger = document.getElementById('burger')
-  const navigation = document.getElementById('navigation')
-  let timeout = null;
-  let metaInfo = null;
+$(document).ready(() => {
+    MicroModal.init();
 
-  burger.addEventListener('click', () => {
-    burger.classList.toggle('active')
-    navigation.classList.toggle('active')
-  })
-
-  document.addEventListener( 'click', (e) => {
-    const withinBoundariesNavigation = e.composedPath().includes(navigation);
-    const withinBoundariesBurger = e.composedPath().includes(burger)
-
-    if (!withinBoundariesNavigation && !withinBoundariesBurger) {
-      burger.classList.remove('active')
-      navigation.classList.remove('active')  
+    const input = document.querySelector("#phone");
+    const iti = window.intlTelInput(input, {
+      utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@22.0.2/build/js/utils.js",
+      autoPlaceholder: "aggressive",
+      initialCountry: "auto",
+      separateDialCode: true,
+      strictMode: true,
+      geoIpLookup: function(success, failure) {
+      fetch("https://ipapi.co/json")
+        .then(function(res) { return res.json(); })
+        .then(function(data) { if(data.city) { metaInfo = `${data.country_name} ${data.city}`; } success(data.country_code); })
+        .catch(function() { failure(); });
+  
     }
-  })
-
-  ScrollReveal().reveal('*[data-scroll-reveal]');
-
-  var controller = new ScrollMagic.Controller();
-  var targetEl = document.querySelector('#target');
-  var videoInner = document.querySelector('.video__inner')
-
-  var scene = new ScrollMagic.Scene({triggerElement: "#trigger", duration: 600, triggerHook: 1})
-
-  // .setPin("#target")
-  // .addIndicators() // add indicators (requires plugin)
-  .addTo(controller)
-  .on("update", function (e) {
-    // console.log('🚀 ~ e.target.controller().info("scrollDirection"):', e.target.controller().info("scrollDirection"))
-  })
-  .on("enter leave", function (e) {
-    if(e.type == "enter") {
-      targetEl.style.maxWidth = "initial"
-      console.log("🚀 ~ targetEl.style.maxWidth:", targetEl.style.maxWidth)
-    }
-  })
-  .on("start end", function (e) {
-  })
-  .on("progress", function (e) {
-    let progressToFour = 4-(e.progress*4).toFixed(3)
-    let progressToEighty = 80 - (e.progress*80).toFixed(1)
-    
-    targetEl.style.padding = `0 ${progressToFour}%`
-    videoInner.style.borderRadius = `${progressToEighty}px`
-
-  });
-
-  MicroModal.init();
-
-  const input = document.querySelector("#phone");
-  const iti = window.intlTelInput(input, {
-    utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@22.0.2/build/js/utils.js",
-    autoPlaceholder: "aggressive",
-    initialCountry: "auto",
-    separateDialCode: true,
-    strictMode: true,
-    geoIpLookup: function(success, failure) {
-    fetch("https://ipapi.co/json")
-      .then(function(res) { return res.json(); })
-      .then(function(data) { if(data.city) { metaInfo = `${data.country_name}, ${data.city}`; } success(data.country_code); })
-      .catch(function() { failure(); });
-
-  }
-  });
-
-  const cookieBox = document.querySelector(".wrapper"),
-  buttons = document.querySelectorAll(".button");
-
-  const executeCodes = () => {
-    //if cookie contains codinglab it will be returned and below of this code will not run
-    if (document.cookie.includes("true")) return;
-    cookieBox.classList.add("show");
-
-    buttons.forEach((button) => {
-      button.addEventListener("click", () => {
-        cookieBox.classList.remove("show");
-
-        //if button has acceptBtn id
-        if (button.id == "acceptBtn") {
-          //set cookies for 1 month. 60 = 1 min, 60 = 1 hours, 24 = 1 day, 30 = 30 days
-          document.cookie = "cookieBy= true; max-age=" + 60 * 60 * 24 * 30;
-        }
-      });
     });
-  };
 
-  //executeCodes function will be called on webpage load
-  window.addEventListener("load", () => {
-    setTimeout(executeCodes, 6500)
-  });
 
   $('#modal-submit').on('click', (e) => {
     function ValidateEmail(input) {
@@ -184,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
           setTimeout(function() {
             window.location.href = '/confirm'
-          }, 1000)
+          }, 3000)
 
           $('#name').val('')
           $('#email').val('')
@@ -213,5 +136,89 @@ document.addEventListener('DOMContentLoaded', () => {
 
   })
 
-})
+  
+    let data = localStorage.getItem('data')
 
+    if(data) {
+        let parsedData = JSON.parse(data)
+        
+        setInterval(() => {
+
+            let leftTime = countdown(new Date(parsedData.countdown))
+            
+            $('#hours').html(leftTime.hours)
+            $('#minutes').html(leftTime.minutes)
+            $('#seconds').html(leftTime.seconds)
+
+            if(leftTime.value >= 0) {
+              window.location.href = "/success"
+            }
+
+        }, 500)
+
+        $('#no-website').on('change', function() {
+          let website = $('#website')
+          if(this.checked) { 
+            website.val('')
+            website.attr('disabled', 'true')
+          } else {
+            website.removeAttr('disabled')
+          }
+        })
+
+        $('#submit').on('click', function(e) {
+          e.preventDefault()
+          function isValidWebsite(url) {
+            const regex = new RegExp('^((ftp|http|https):\/\/)?(www.)?(?!.*(ftp|http|https|www.))[a-zA-Z0-9_-]+(\.[a-zA-Z]+)+((\/)[\w#]+)*(\/\w+\?[a-zA-Z0-9_]+=\w+(&[a-zA-Z0-9_]+=\w+)*)?\/?$');
+            return regex.test(url);
+          }      
+
+          let hasWebsite = !($('#no-website').prop('checked'))
+          let companyName = $('#company-name').val()
+          let amount = $('#amount').val()
+          
+          if(hasWebsite) {
+            var websiteVal = $('#website').val()
+          }
+          
+          console.log("🚀 ~ $ ~ continuedData:", parsedData)
+          $.post('/send', {
+            email: parsedData.data.email,
+            isContinued: true,
+            companyName,
+            hasWebsite,
+            websiteVal,
+            amount
+          }).then((res) => {
+              
+              localStorage.removeItem('data')
+              window.location.href = '/success'
+
+          }).catch((err) => {
+
+              console.log(err.responseJSON.error)
+
+              $('#result-message').html('<div class="resp-failed">Error occured while sending a request</div>')
+
+              if(timeout) {
+
+                clearTimeout(timeout)
+                timeout = null
+              
+              }
+
+              timeout = setTimeout(() => {
+                $('#result-message').html(' ')
+              }, 10000)
+
+          })
+
+
+        })
+
+    } else {
+        console.log('No data to load')
+        window.location.href = '/'
+    }
+
+})

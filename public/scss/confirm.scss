@@ -35,6 +35,14 @@ body {
     }
 }
 
+.nav__header {
+    z-index: 3000;
+}
+
+.intro {
+    padding-top: 196px !important
+}
+
 .info {
     width: 100%;
     max-width: 672px;
@@ -77,3 +85,7 @@ body {
       opacity: 0.75;
     }
   }
+
+footer {
+    margin-top: 60px;
+}

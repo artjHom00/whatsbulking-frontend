@@ -141,6 +141,9 @@ ul {
 .input:focus, .textarea:focus {
   border-color: #2853EA;
 }
+.input:disabled, .textarea:disabled {
+  background: #F8F9FE;
+}
 
 .button {
   display: inline-flex;
@@ -450,7 +453,7 @@ ul {
 \**************************/
 .modal__overlay {
   position: fixed;
-  z-index: 5;
+  z-index: 50000000000;
   top: 0;
   left: 0;
   right: 0;
@@ -868,6 +871,9 @@ ul {
 .input:focus, .textarea:focus {
   border-color: #2853EA;
 }
+.input:disabled, .textarea:disabled {
+  background: #F8F9FE;
+}
 
 .button {
   display: inline-flex;
@@ -1177,7 +1183,7 @@ ul {
 \**************************/
 .modal__overlay {
   position: fixed;
-  z-index: 5;
+  z-index: 50000000000;
   top: 0;
   left: 0;
   right: 0;
@@ -2465,6 +2471,14 @@ body {
   font-weight: 800;
 }
 
+.nav__header {
+  z-index: 3000;
+}
+
+.intro {
+  padding-top: 196px !important;
+}
+
 .info {
   width: 100%;
   max-width: 672px;
@@ -2504,4 +2518,8 @@ body {
 .dynamic-checkbox label {
   font-weight: 500;
   opacity: 0.75;
+}
+
+footer {
+  margin-top: 60px;
 }/*# sourceMappingURL=confirm.css.map */
